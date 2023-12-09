@@ -2,7 +2,7 @@
 const {sectionText} = Astro.props;
 ---
 
-<section class="productSection">
+<section class="productsSection">
     <h2>{sectionText}</h2>
     <div class="products">
         <slot/>
@@ -10,7 +10,7 @@ const {sectionText} = Astro.props;
 </section>
 
 <style>
-.productSection {
+.productsSection {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
@@ -19,10 +19,9 @@ const {sectionText} = Astro.props;
 }
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     margin: 1rem;
     gap: 2rem;
-    justify-items: center;
     align-items: center;
 }
 h2 {
