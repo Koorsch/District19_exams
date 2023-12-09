@@ -57,13 +57,16 @@
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
     height: 1500px;
 }
     *{
   padding: 0;
   margin: 0;
 }
-
+header {
+  z-index: 1000;
+}
 nav{
   background-color: #262626;
 }
@@ -114,9 +117,7 @@ a{
   margin-left: 1rem;
 }
 
-.nav-link{
-  transition: 0.3s ease-out;
-}
+
 
 .nav-link:hover{
   color: dodgerblue;
@@ -153,7 +154,7 @@ a{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 50px; /* Adjust the height as needed */
+    height: 50px;
 }
 
 .sticky-nav-menu {
@@ -174,6 +175,10 @@ a{
 
 .sticky-nav-link:hover {
     color: dodgerblue;
+}
+
+.visible {
+  display: block !important;
 }
 
 
@@ -208,10 +213,12 @@ a{
     width: 100%;
     text-align: center;
     transition: 0.8s ease;
+    z-index: 1000;
   }
 
   .nav-item{
     margin: 16px 0;
+    
   }
 
 
@@ -242,14 +249,14 @@ function toggleStickyNavbar() {
   const threshold = 500;
 
   if (window.innerWidth > 768) {
-    if (scrollPosition > threshold) {
-      stickyNavbar.style.display = "block";
-    } else {
-      stickyNavbar.style.display = "none";
-    }
+  if (scrollPosition > threshold) {
+    stickyNavbar.classList.add("visible");
   } else {
-    stickyNavbar.style.display = "none";
+    stickyNavbar.classList.remove("visible");
   }
+} else {
+  stickyNavbar.classList.remove("visible");
+}
 }
 
 toggleStickyNavbar();
