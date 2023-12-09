@@ -1,0 +1,44 @@
+---
+const {buttonVariant, buttonText} = Astro.props;
+---
+
+<button data-variant={buttonVariant}>
+    <p>
+        {buttonText}
+    </p>
+</button>
+
+<style>
+button {
+    box-sizing: content-box;
+    height: 2rem;
+    width: 8rem;
+    max-width: 10rem;
+    padding: 0.5rem;
+    margin: 0.25rem;
+    border-radius: 1.5rem;
+    border: 2px solid;
+    text-align: center;
+}
+button:hover {
+    /* hvad kunne vi tænke os her? */
+    text-decoration: underline 2px;
+}
+p {
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.1rem;
+    margin: 0 1rem;
+}
+[data-variant="primary"] {
+    color: var(--ff-white1);
+    border-color: var(--ff-white1);
+    background-color: var(--ff-green1);
+
+}
+[data-variant="secondary"] {
+    color: var(--ff-green1);
+    border-color: var(--ff-white);
+    background-color: var(--ff-white);
+}
+</style>

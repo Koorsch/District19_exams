@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="69" height="69" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 69 69">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #556146;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="34.5" cy="34.5" r="34.5"/>
+  <image width="36" height="35" transform="translate(16 17)" xlink:href="Vector-1.png"/>
+</svg>

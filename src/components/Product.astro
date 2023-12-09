@@ -1,0 +1,53 @@
+---
+const {headerText, description, buttonText, buttonVariant, imgAlt, imgSrc, price}= Astro.props;
+import Button from "./Button.astro";
+---
+
+<section class="product">
+    <img loading="lazy" class="productImg" src={`media/img/${imgSrc}`} alt={imgAlt}>
+    <div>
+        <h2>{headerText}</h2>
+        <p class="textDesc">{description}</p>
+    </div>
+    <div class="buttonField">
+        <Button buttonText={buttonText} buttonVariant={buttonVariant}/>
+        <Button buttonText={buttonText} buttonVariant="secondary"/>
+        <h3>{price},-</h3>
+        <!-- tilføje - + og textfelt    -->
+    </div>
+</section>
+
+<style>
+.product {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto;
+    width: 100%;
+    max-width: 500px;
+    margin: 0.25rem;
+    justify-content: center;
+    align-items: center;
+}
+.productImg {
+    height: auto;
+    width: 100%;
+    max-width: 500px;
+}
+.product > div {
+    margin: 0.25rem;
+}
+.textDesc {
+    /* margins etc+ */
+}
+.buttonField {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0.25rem;
+}
+h3 {
+}
+
+</style>
