@@ -3,12 +3,53 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 ---
 
+<Layout title="Falafel Factory">
+    <Hero></Hero>
+    <ProductSection sectionText="Vores populære rætter" sectionVariant="3col">
+        <Product 
+        imgSrc="retter/freestylepita.webp" 
+        imgAlt="En spicy carrot pita" 
+        headerText="Spicy Carrot"
+        description="Fetaost, cherrytomater, valnødder, mynte, hummus, persillesalat og tahindressing" 
+        buttonVariant="primary" 
+        buttonText="Tilføj ordre"
+        price="80">
+    </Product>
+    <Product 
+        imgSrc="retter/kukupita.webp" 
+        imgAlt="Kuku Pita" 
+        headerText="Kuku Pita" 
+        description="Kartoffelomelet med krydderurter, hummus, persillesalat og tahindressing"
+        buttonVariant="primary" 
+        buttonText="Tilføj ordre"
+        price="80">
+    </Product>
+    <Product 
+        imgSrc="retter/rootspita.webp" 
+        imgAlt="Roots Pita" 
+        headerText="Roots Pita" 
+        description="Rødbede falafler, tahin, rødkålssalat, dukkah og tahindressing"
+        buttonVariant="primary" 
+        buttonText="Tilføj ordre"
+        price="70">
+    </Product>
+</Section>
+<Section 
+    sectionHeader="om os"
+    sectionVariant="2col">
+    <div>
+        <p>Lidt text</p>
+    </div>
+    <div class="sectionImg">
+        <img src="#" alt="Et billede">
+    </div>
+</Section>
 <Layout>
     
-    <Hero></Hero>
 <h1>Team19 - Home</h1>
 </Layout>
 
 <style>
- 
+
+
 </style>

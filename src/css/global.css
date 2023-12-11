@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap");
+
+:root {
+  --ff-green1: #556146;
+  --ff-green2: #778762;
+  --ff-white1: #f1f1f1;
+  --ff-white2: #f5ffe9;
+  --ff-text: "Quicksand", sans-serif;
+  --ff-text-400: 400;
+  --ff-text-700: 700;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--ff-text);
+  font-weight: var(--ff-text-700);
+  color: var(--ff-green1);
+}
+p,
+a,
+span {
+  font-family: var(--ff-text);
+  font-weight: var(--ff-text-700);
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.25rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.35rem;
+}
+p {
+  font-size: 1rem;
+}
+.light-mode {
+  background-color: var(--ff-white);
+  color: var(--ff-green);
+}
+.dark-mode {
+  background-color: var(--ff-green);
+  color: var(ff-white);
+}
