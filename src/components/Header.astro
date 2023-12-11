@@ -47,7 +47,7 @@ import "../css/global.css";
                 </li>
             </ul>
             <div class="right-button">
-                <button id="viewOrdersBtn">View Orders</button>
+                <button id="viewOrdersBtnSticky">View Orders</button>
             </div>
         </div>
     </nav>
@@ -193,6 +193,8 @@ a{
   .hamburger{
     display: block;
     margin-right: 1rem;
+    background-color:#556146;
+    padding: 0.5rem;
   }
 
   .hamburger.active .bar:nth-child(2){
@@ -216,6 +218,7 @@ a{
     text-align: center;
     transition: 0.8s ease;
     z-index: 1000;
+    background-color:#556146d0;
   }
 
   .nav-item{
@@ -245,7 +248,7 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
   navMenu.classList.remove("active");
 }));
 
-// Function to toggle the visibility of the sticky navbar based on scroll position
+
 function toggleStickyNavbar() {
   const scrollPosition = window.scrollY;
   const threshold = 500;
