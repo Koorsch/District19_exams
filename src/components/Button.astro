@@ -10,6 +10,7 @@ const {buttonVariant, buttonText} = Astro.props;
 
 <style>
 button {
+    display: inline-block;
     box-sizing: content-box;
     height: auto;
     max-height: 2rem;
@@ -25,12 +26,13 @@ button:hover {
 }
 p {
     text-transform: uppercase;
+    line-height: 1.25rem;
     text-align: center;
     padding: 0.2rem;
     margin: 0 1rem;
 }
 [data-variant="primary"] {
-    color: var(--ff-white1);
+    color: var(--ff-white1);    
     border-color: var(--ff-white1);
     background-color: var(--ff-green1);
 }

@@ -2,72 +2,92 @@
 ---
 
 <footer>
+    <div class="topBorder"></div>
     <div class="googleMaps">
         <img src="media/img/maps.webp" alt="placeholder Google maps">
     </div>
     <ul class="contactInfo">
+        <h3>Kontakt</h3>
+        <div id="contact">
             <li><p>Nørrebrogade 63, 2200</p></li>
             <li><p>+45 52 40 63 63</p></li>
             <li><a href="mailto:info@falafelfactory.dk">info@falafelfactory.dk</a></li>
-    </ul>
-        <div class="socialMedia">
-            <ul>
-                <li><img src="media/svg/icons/facebook.svg" alt="Facebook"></li>
-                <li><img src="media/svg/icons/instagram.svg" alt="Instagram"></li>
-            </ul>
-            <img src="#" alt="Trust Pilot anmeldelser">
         </div>
-    <div class="logo">
-        <img src="media/img/footer_logo.webp" alt="Logotype">
-     </div>
+    </ul>
+        <div class="mediaLogo">
+            <div>
+                <img src="media/svg/icons/facebook.svg" alt="Facebook">
+                <img src="media/svg/icons/instagram.svg" alt="Instagram">
+            </div>
+                <img src="#" alt="Trust Pilot anmeldelser">
+        </div>
+            <div id="logo">
+                <img src="media/img/footer_logo.webp" alt="Logotype">
+            </div>
+
 </footer>
+
 <style>
     footer {
-        display: grid;
+        display: flex;
+        justify-content: space-around;
+        height: auto;
+        flex-wrap: wrap;
+        width: 80%;
         padding-top: 1rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        border-top: 2px solid green;
-        height: fit-content;
+        margin: auto;
+        gap: 2rem;
+    }
+    .topBorder {
+        display: flex;
+        height: 2px;
         width: 100%;
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        margin-bottom: 1rem;
+        border-top: 2px solid var(--ff-green1);
     }
     .googleMaps {
-        max-width:500px;
-        margin: 0.25rem;
-        border-radius: 0.25rem;
+        max-width: 500px;
+        object-fit: fill;
+        height: auto;
     }
     .googleMaps img {
-        width: 100%;
-        height: 100%;
-        object-position: center;
         object-fit: fill;
+        object-position: center;
+        width: 100%;
+        height: auto;
     }
     .contactInfo {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
         list-style: none;
     }
-    .contactInfo a {
-    }
-    .socialLogo {
+#contact {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 1rem;
+}
+    .mediaLogo {
         display: grid;
+        grid-template-rows: 1fr 1fr;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        height: fit-content;
+        min-width: fit-content;
+    }
+    .mediaLogo div {
+        display: grid;
+        gap: 1rem;
         grid-template-columns: 1fr 1fr;
-        list-style: none;
-        justify-content: center;
     }
-    .socialLogo {
-    }
-    .socialMedia ul {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        list-style: none;
-    }
-    .logo {
-    }
-    .logo img {
-        width: 150px;
+    #logo {
+        min-width: 120px;
         height: auto;
-        object-fit: fill;
     }
+    #logo img {
+        width: 100%;
+        height: auto;
+    }
+
 </style>

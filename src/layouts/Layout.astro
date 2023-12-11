@@ -3,7 +3,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import "../css/global.css";
 
-const {title, mode} = Astro.props;
+const {title, image} = Astro.props;
 
 ---
 <!doctype html>
@@ -18,7 +18,7 @@ const {title, mode} = Astro.props;
 	</head>
 
 	<body>
-		<Header/>
+		<Header image={image}/>
 		<main>
 			<slot />
 		</main>

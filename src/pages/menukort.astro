@@ -1,0 +1,132 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Product from "../components/Product.astro";
+import "../css/global.css";
+
+const apiEndpoint = "https://jgiscxohiqtteuwqyfad.supabase.co/rest/v1/menu";
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpnaXNjeG9oaXF0dGV1d3F5ZmFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Njg0MjgsImV4cCI6MjAxNjE0NDQyOH0.ioDBej7LRKgrKtxrX7F7ia4lbG2PqH49mwQZHvOb0X4";
+const header = {method: "GET", headers: {apikey: apiKey}}
+
+const fullMenu = await fetch(apiEndpoint, header).then((res => res.json()));
+
+
+// function showMenu(menuItem) {
+// menuItem.forEach((item) => {
+//     console.log(item);
+// });
+// // console.log(menuItem);
+// }
+// function showItem(dish) {
+//     console.log(dish);
+// }
+
+
+// // Event listener for menu item clicks
+// menuType.forEach(item => {
+//   item.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     const menuItem = item.getAttribute('data-type');
+//     fetchData(menuItem); // Fetch data based on the selected menu item
+//   });
+// });
+
+---
+<Layout title="Falafel Factory - Menukort">
+    <section class="menu">
+        <section class="menuTab">
+            <ul class="menuChoice">
+                <li class="menuLinks"><a href="#" id="pita">Pita</a></li>
+                <li class="menuLinks"><a href="#" id="platte">Platte</a></li>
+                <li class="menuLinks"><a href="#" id="bowls">Bowls</a></li>
+                <li class="menuLinks"><a href="#" id="sides">Sides</a></li>
+                <li class="menuLinks"><a href="#" id="drinks">Drinks</a></li>
+            </ul>
+        </section>
+        <section class="menuItems">
+            <ul class="dishes">
+                {
+                fullMenu.map((food) => {
+                    return <li class="singleDish"><Product buttonText="Tilføj" buttonVariant="primary" data={food}></Product></li>})
+                }   
+            </ul>   
+        </section>
+    </section>
+</Layout>
+<script>
+// const menuType = document.querySelectorAll(".menuLinks > a");
+// const pita = menuType[0];
+// const platte = menuType[1];
+// const bowls = menuType[2];
+// const sides = menuType[3];
+// const drinks = menuType[4];
+// console.log(pita, platte, bowls, sides, drinks);
+// console.log(menuType);
+</script>
+
+
+<style>
+.menu {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.menuTab {
+    width: 85%;
+    margin: auto;
+    border-bottom: 3px solid var(--ff-green1);  
+
+}
+.menuChoice {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 80%;
+    margin: auto;
+}
+.menuChoice > .menuLinks {
+    justify-content: center;
+}
+.menuLinks {
+    display:flex;
+    list-style: none;
+    height: 3rem;
+    width: 10rem;
+    box-sizing: content-box;
+    justify-content: space-between;
+    text-align: center;
+    align-content: center;
+}
+.menuLinks a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--ff-green1);
+}
+.menuLinks a:hover {
+    color: var(--ff-green2);
+}
+.menuLinks a:active {
+    text-decoration: underline;
+}
+.menuItems {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.menuItems a {
+    font-size: larger;
+    text-decoration: none;
+}
+.dishes {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.singleDish {
+    display: grid;
+    list-style: none;
+}
+</style>
