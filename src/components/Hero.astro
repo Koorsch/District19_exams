@@ -1,6 +1,6 @@
 ---
 ---
-
+ 
 <div class="heroPic">
     <div class="grid_1_1_1">
         <div class="grid_item">
@@ -83,7 +83,8 @@
 
     }
 .heroPic {
-    position:absolute;
+    position:static;
+    z-index: 100;
     top: 0px; left: 0;
     height: 1200px;
     max-width: 100%;
@@ -97,10 +98,10 @@
     -webkit-mask-image:url("/svg/HeroMask.svg");
     mask-size: contain;
     mask-repeat: no-repeat;
-    mask-position: top -230px left;
+    mask-position: top -150px left;
     -webkit-mask-size: contain;
     -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: top -230px left;
+    -webkit-mask-position: top -150px left;
 
 }
 
@@ -124,7 +125,7 @@
     -webkit-mask-position: top left;
 
     
-}
+} 
 
 }
     

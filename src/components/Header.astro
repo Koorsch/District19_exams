@@ -2,7 +2,7 @@
 import "../css/global.css";
 ---
 
-<header>
+<header >
     <div class="container"> 
         <nav class="navbar">
             <ul class="nav-menu">
@@ -29,36 +29,36 @@ import "../css/global.css";
           </div>
         </nav>
      </div>
-
-     <nav class="sticky-navbar">
-        <div class="container">
-            <ul class="sticky-nav-menu">
-                <li class="sticky-nav-item">
-                    <a href="#" class="sticky-nav-link">HOME</a>
-                </li>
-                <li class="sticky-nav-item">
-                    <a href="#" class="sticky-nav-link">MENU</a>
-                </li>
-                <li class="sticky-nav-item">
-                    <a href="#" class="sticky-nav-link">CATERING</a>
-                </li>
-                <li class="sticky-nav-item">
-                    <a href="#" class="sticky-nav-link">OM OS</a>
-                </li>
-            </ul>
-            <div class="right-button">
-                <button id="viewOrdersBtnSticky">View Orders</button>
-            </div>
-        </div>
-    </nav>
    </header>
+   
+   <nav class="sticky-navbar">
+    <div class="containerSticky">
+        <ul class="sticky-nav-menu">
+            <li class="sticky-nav-item">
+                <a href="#" class="sticky-nav-link">HOME</a>
+            </li>
+            <li class="sticky-nav-item">
+                <a href="#" class="sticky-nav-link">MENU</a>
+            </li>
+            <li class="sticky-nav-item">
+                <a href="#" class="sticky-nav-link">CATERING</a>
+            </li>
+            <li class="sticky-nav-item">
+                <a href="#" class="sticky-nav-link">OM OS</a>
+            </li>
+        </ul>
+        <div class="right-button">
+            <button id="viewOrdersBtnSticky">View Orders</button>
+        </div>
+    </div>
+</nav>
    <style>
     @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 body {
     margin: 0;
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
-    height: 1500px;
+    
     
 }
     *{
@@ -66,11 +66,15 @@ body {
   margin: 0;
 }
 header {
-  position:relative;
-    top: 0px; left: 0;
-  z-index: 1000;
-}
-
+    display: block;
+    position: relative;
+    width: 100%;
+    z-index: 10000;
+   
+  }
+  .absolute {
+    position: absolute;
+  }
 
 li{
   list-style: none;
@@ -97,6 +101,7 @@ a{
 }
 
 .container{
+  position: absolute;
   max-width: 100%;
     width: 100%;
     
@@ -124,6 +129,7 @@ a{
 
 .nav-link:hover{
   color: dodgerblue;
+  text-decoration: underline 2px;
 }
 
 .hamburger{
@@ -146,18 +152,25 @@ a{
     position: fixed;
     top: 0;
     left: 0;
-    max-width: auto;
+    max-width: 100%;
+    width:fit-content;
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
     background-color: #556146;
     z-index: 1000;
 }
+.containerSticky{
+    margin: 0 auto;
+    z-index: 1000;
+}
 
-.sticky-navbar .container {
+.sticky-navbar .containerSticky {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 50px;
+    max-width: auto;
+   
 }
 
 .sticky-nav-menu {
@@ -230,6 +243,25 @@ a{
   .nav-menu.active{
     left: 0;
   }
+  /* .heroPic {
+   
+    max-width: 100%;
+
+    background-image: url("/heroImg/Hero_Home.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+    mask-image:url("/svg/HeroMask.svg");
+    -webkit-mask-image:url("/svg/HeroMask.svg");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: top  left;
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: top left;
+
+    
+} */
 }
    </style>
 
