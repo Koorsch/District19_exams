@@ -1,10 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import TilbehorForm from "../components/tilbehorForm.astro";
 
 const {Image} = Astro.props;
+const {imageVariant} = Astro.props;
 ---
 
-<Layout Image="/heroImg/Hero_Catering.png"  title="Falafel Factory - CATERING">
+<Layout imageVariant="lille" Image="/heroImg/Hero_Catering.png"  title="Falafel Factory - CATERING">
 
-
+<TilbehorForm/>
 </Layout>

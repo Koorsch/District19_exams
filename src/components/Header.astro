@@ -7,20 +7,22 @@ import "../css/global.css";
         <nav class="navbar">
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link">HOME</a>
+                    <a href="../" class="nav-link">HOME</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">MENU</a>
+                    <a href="/menu/" class="nav-link">MENU</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">CATERING</a>
+                    <a href="/catering/" class="nav-link">CATERING</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">OM OS</a>
+                    <a href="/omos" class="nav-link">OM OS</a>
                 </li>
             </ul>
             <div class="right-button">
-                <button id="viewOrdersBtn">View Orders</button>
+              <button id="viewOrdersBtn">
+                <a href="/dinOrdre">Vis Ordre</a>
+              </button>
             </div>
           <div class="hamburger">
             <span class="bar"></span>
@@ -35,20 +37,22 @@ import "../css/global.css";
     <div class="containerSticky">
         <ul class="sticky-nav-menu">
             <li class="sticky-nav-item">
-                <a href="#" class="sticky-nav-link">HOME</a>
+                <a href="../" class="sticky-nav-link">HOME</a>
             </li>
             <li class="sticky-nav-item">
-                <a href="#" class="sticky-nav-link">MENU</a>
+                <a href="/menu/" class="sticky-nav-link">MENU</a>
             </li>
             <li class="sticky-nav-item">
-                <a href="#" class="sticky-nav-link">CATERING</a>
+                <a href="/catering/" class="sticky-nav-link">CATERING</a>
             </li>
             <li class="sticky-nav-item">
-                <a href="#" class="sticky-nav-link">OM OS</a>
+                <a href="/omos/" class="sticky-nav-link">OM OS</a>
             </li>
         </ul>
         <div class="right-button">
-            <button id="viewOrdersBtnSticky">View Orders</button>
+          <button id="viewOrdersBtnSticky">
+            <a href="/dinOrdre">Vis Ordre</a>
+          </button>
         </div>
     </div>
 </nav>
@@ -95,10 +99,15 @@ a{
     margin-right: 1rem;
     cursor: pointer;
 }
+.right-button button a{
+    color: #556146;
+    cursor: pointer;
+}
 
 .right-button button:hover {
-    background-color: #45a049;
+    background-color: #D1E5B9;
 }
+
 
 .container{
   position: absolute;
@@ -128,7 +137,7 @@ a{
 
 
 .nav-link:hover{
-  color: dodgerblue;
+  color: #D1E5B9;
   text-decoration: underline 2px;
 }
 
@@ -219,6 +228,15 @@ a{
   .hamburger.active .bar:nth-child(3){
     transform: translateY(-8px) rotate(-45deg);
   }
+  .right-button button {
+    padding: 8px 12px;
+   
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 4rem;
+    margin-left: 1rem;
+    cursor: pointer;
+}
 
   .nav-menu{
     position: fixed;
@@ -243,25 +261,7 @@ a{
   .nav-menu.active{
     left: 0;
   }
-  /* .heroPic {
-   
-    max-width: 100%;
 
-    background-image: url("/heroImg/Hero_Home.png");
-    background-repeat: no-repeat;
-    background-size: 100%;
-    
-    mask-image:url("/svg/HeroMask.svg");
-    -webkit-mask-image:url("/svg/HeroMask.svg");
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: top  left;
-    -webkit-mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: top left;
-
-    
-} */
 }
    </style>
 

@@ -1,0 +1,65 @@
+---
+---
+
+<form id="orderForm">
+   
+        <label for="extraDish">Tilbehør: </label>
+        <select id="extraDish" name="extraDish">
+            <option value="extra1">Vælg tilbehør</option>
+          <option value="extra1">Extra Dish 1</option>
+          <option value="extra2">Extra Dish 2</option>
+
+        </select>
+        <label for="amount">Antal: </label>
+        <select id="amount" name="amount">
+            <option value="amount1">Antal</option>
+          <option value="amount2">1</option>
+          <option value="amount3">2</option>
+
+        </select>
+    
+
+    
+    <button type="submit">Tilføj Ordre</button>
+  </form>
+
+  <style>
+   
+    #orderForm {
+      max-width: 300px;
+      margin: auto;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px; 
+    }
+    button {
+      margin-top: 10px;
+    }
+  </style>
+
+
+<script>
+
+    let dishCount = 11;
+
+    function addDish() {
+      const dishesContainer = document.getElementById('dishesContainer');
+
+      const dishDiv = document.createElement('div');
+      dishDiv.className = 'dish-container';
+
+      const label = document.createElement('label');
+      label.textContent = `Dish ${dishCount}: `;
+      dishDiv.appendChild(label);
+
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.name = `dish${dishCount}`;
+      dishDiv.appendChild(input);
+
+      dishesContainer.appendChild(dishDiv);
+
+      dishCount++;
+    }
+  </script>

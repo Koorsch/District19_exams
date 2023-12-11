@@ -5,11 +5,10 @@ const {Image, imageVariant} = Astro.props;
 
 
 
-    <section>
-    <div class="hero">
-        <img data-variant={imageVariant} src={Image} alt="">
-      
-    </div>
+<section>
+        <div class="hero">
+            <img data-variant={imageVariant} src={Image} alt="">
+        </div>
 </section>
 
 
@@ -30,8 +29,7 @@ const {Image, imageVariant} = Astro.props;
       
 }
 [data-variant="lille"] {
-    width: auto;
-      
+    width: 100%;
       mask-image:url("/heroImg/maske_small.svg");
   -webkit-mask-image:url("/heroImg/maske_small.svg");
   mask-size: contain;
@@ -42,8 +40,5 @@ const {Image, imageVariant} = Astro.props;
   -webkit-mask-position: top 0 left;
 }
 
-    .hero img {
-      width: 100%;
-    }
 
 </style>
