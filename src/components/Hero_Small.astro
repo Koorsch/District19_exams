@@ -1,0 +1,49 @@
+---
+const {Image, imageVariant} = Astro.props;
+
+---
+
+
+
+    <section>
+    <div class="hero">
+        <img data-variant={imageVariant} src={Image} alt="">
+      
+    </div>
+</section>
+
+
+<style>
+
+[data-variant="stor"] {
+    width: auto;
+      
+      mask-image:url("/svg/maske_v2.svg");
+  -webkit-mask-image:url("/svg/maske_v2.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: top 0 left;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: top 0 left;
+      
+      
+}
+[data-variant="lille"] {
+    width: auto;
+      
+      mask-image:url("/heroImg/maske_small.svg");
+  -webkit-mask-image:url("/heroImg/maske_small.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: top 0 left;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: top 0 left;
+}
+
+    .hero img {
+      width: 100%;
+    }
+
+</style>

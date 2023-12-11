@@ -1,14 +1,17 @@
 ---
 
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/HeroV2.astro";
+import Hero from "../components/Hero_Small.astro";
 import Product from "../components/Product.astro";
 import ProductSection from "../components/ProductSection.astro";
 import Section from "../components/Section.astro";
+
+const {Image} = Astro.props;
+const {imageVariant} = Astro.props;
 ---
 
-<Layout title="Falafel Factory">
-    <Hero></Hero>
+<Layout imageVariant="lille" title="Falafel Factory" Image="/heroImg/Hero_Menu.png">
+   
     <ProductSection sectionText="Vores populære rætter" sectionVariant="3col">
         <Product 
         imgSrc="retter/freestylepita.webp" 
