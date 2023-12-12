@@ -1,7 +1,7 @@
 ---
 import "../css/global.css";
 import Button from "../components/Button.astro";
-const {sectionImg,imgType,imgVariant,sectionAlt,sectionTitle,sectionText, sectionVariant, sectionBackground,buttonText,buttonVariant} = Astro.props;
+const {sectionImg,imgType,span,imgVariant,sectionAlt,sectionTitle,sectionText, sectionVariant, sectionBackground,buttonText,buttonVariant} = Astro.props;
 ---
 
 <section data-variant={sectionBackground}>
@@ -10,7 +10,7 @@ const {sectionImg,imgType,imgVariant,sectionAlt,sectionTitle,sectionText, sectio
         <div data-variant={imgVariant} >
             <img loading="lazy" class={imgType} src={`media/img/${sectionImg}`} alt={sectionAlt}>
         </div>
-        <div class="span2">
+        <div class={span}>
             <h2>{sectionTitle}</h2>
             <p>{sectionText}</p>
             <Button buttonText={buttonText} buttonVariant={buttonVariant}/>
@@ -20,14 +20,31 @@ const {sectionImg,imgType,imgVariant,sectionAlt,sectionTitle,sectionText, sectio
 </section>
 
 <style>
+
+.span1 {
+        margin-left: 10%;
+        margin-right: 20%;
+        margin-bottom: 5%;
+        margin-top: 20%;
+    }
     .span2 {
         grid-column: span 2;
+        margin-top: 15%;
         margin-left: 10%;
         margin-right: 20%;
         margin-bottom: 5%;
     }
+    .span3 {
+        margin-left: 10%;
+        margin-right: 20%;
+        margin-bottom: 5%;  
+    }
+    .span3 p {
+        font-size: 32px;
+        font-weight: 00;
+    }
     h2 {
-        margin-top: 20%;
+       
         font-size: 2vw;
         color: #556146;
     }
@@ -35,7 +52,7 @@ const {sectionImg,imgType,imgVariant,sectionAlt,sectionTitle,sectionText, sectio
         margin-top: 5%;
         margin-bottom: 5%;
         font-size: 1.2vw;
-        letter-spacing: 0.1rem;
+        line-height: 1.6;
        
         color: #556146;
     }
@@ -43,7 +60,7 @@ const {sectionImg,imgType,imgVariant,sectionAlt,sectionTitle,sectionText, sectio
         height: auto;
         width: 100%;
         align-self: center;
-        padding-right: 10%;
+        padding: 10%;
 
        
     }

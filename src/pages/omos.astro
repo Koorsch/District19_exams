@@ -1,10 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import VoresKoncept from "../components/VoresKoncept.astro";
 const {Image} = Astro.props;
 const {imageVariant} = Astro.props;
 ---
 
 <Layout imageVariant="lille" Image="/heroImg/Hero_Om.png"  title="Falafel Factory - Om Os">
+    <VoresKoncept/>
+    <Section
+    sectionVariant="3col"
+    imgVariant="imgLeft"
+    span="span2"
+    sectionBackground="sectionWhite"
+    sectionTitle="BUTIKKEN"
+    sectionText="I vores grønne oase i hjertet a Nørrebro, kan du slappe af og føle dig hjemme. Vi anretter dit måltid for øjnene af dig. Man kan både se og smage, og det gør lige oplevelsen mere sanserig. Vi vil gerne udstråle det ærlige og transparente – du får, hvad du ser"
+    sectionImg="/Om_os_Butikken.webp"
+    sectionAlt=""
+    buttonVariant="4th" 
+    buttonText="Se Menu">
+</Section>
 
 
 </Layout>

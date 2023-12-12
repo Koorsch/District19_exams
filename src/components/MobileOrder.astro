@@ -1,0 +1,56 @@
+---
+---
+
+
+<div class="navigation">
+    <div class="left-side">
+      <span class="view-order">View Order</span>
+    </div>
+    <div class="right-side">
+      <span class="total-price">Total: 100 ,-</span>
+    </div>
+  </div>
+
+<style>
+   .navigation {
+      display: none;
+    }
+ @media(max-width:768px){
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .navigation {
+  position: fixed;
+  bottom: 1%;
+  left: 5%;
+  width: 90%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: #71815E solid 10px;
+  background-color: #ffffff;
+  color: #71815E;
+  padding: 10px 0; 
+  border-radius: 2rem;
+}
+
+    .left-side,
+    .right-side {
+      flex: 1;
+      text-align: center;
+    }
+
+    /* Style for the "View Order" */
+    .view-order {
+      font-weight: bold;
+    }
+
+    /* Style for the total price */
+    .total-price {
+      font-style: italic;
+    }
+}
+</style>

@@ -1,11 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import MobileOrder from "../components/MobileOrder.astro";
 const {Image} = Astro.props;
 const {imageVariant} = Astro.props;
 const {sectionBackgroud} = Astro.props
 ---
 
 <Layout imageVariant="lille"  Image="/heroImg/Hero_Menu.png" title="Falafel Factory - MENU">
+    <MobileOrder/>
 <h1>Team19 - Menu</h1>
 </Layout>
 
