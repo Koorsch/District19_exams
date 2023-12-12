@@ -3,33 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import Product from "../components/Product.astro";
 import "../css/global.css";
 
-const apiEndpoint = "https://jgiscxohiqtteuwqyfad.supabase.co/rest/v1/menu";
-const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpnaXNjeG9oaXF0dGV1d3F5ZmFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Njg0MjgsImV4cCI6MjAxNjE0NDQyOH0.ioDBej7LRKgrKtxrX7F7ia4lbG2PqH49mwQZHvOb0X4";
-const header = {method: "GET", headers: {apikey: apiKey}}
+// const apiEndpoint = "https://jgiscxohiqtteuwqyfad.supabase.co/rest/v1/menu";
+// const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpnaXNjeG9oaXF0dGV1d3F5ZmFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Njg0MjgsImV4cCI6MjAxNjE0NDQyOH0.ioDBej7LRKgrKtxrX7F7ia4lbG2PqH49mwQZHvOb0X4";
 
-const fullMenu = await fetch(apiEndpoint, header).then((res => res.json()));
-
-
-// function showMenu(menuItem) {
-// menuItem.forEach((item) => {
-//     console.log(item);
-// });
-// // console.log(menuItem);
-// }
-// function showItem(dish) {
-//     console.log(dish);
-// }
-
-
-// // Event listener for menu item clicks
-// menuType.forEach(item => {
-//   item.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     const menuItem = item.getAttribute('data-type');
-//     fetchData(menuItem); // Fetch data based on the selected menu item
-//   });
-// });
-
+// const fullMenu = await fetch(apiEndpoint, {
+//     method: "GET",
+//     headers: {
+//         apikey: apiKey,
+//     },
+// }).then((res) => res.json());
+const {fullMenu} = Astro.props;
 ---
 <Layout title="Falafel Factory - Menukort">
     <section class="menu">
@@ -44,25 +27,30 @@ const fullMenu = await fetch(apiEndpoint, header).then((res => res.json()));
         </section>
         <section class="menuItems">
             <ul class="dishes">
+                <!-- <Product menuItem={data[1]} buttonVariant="primary" buttonText="Tilføj"/>
+                <Product menuItem={data[2]} buttonVariant="primary" buttonText="Tilføj"/>
+                <Product menuItem={data[3]} buttonVariant="primary" buttonText="Tilføj"/> -->
+
+                <h1>Udkommentere mapen hvis du skal kigge på opsætning</h1>
                 {
-                fullMenu.map((food) => {
-                    return <li class="singleDish"><Product buttonText="Tilføj" buttonVariant="primary" data={food}></Product></li>})
-                }   
+                    fullMenu.map(menuItems => {
+                        return <Product menuItem={menuItems} buttonVariant="primary" buttonText="Tilføj"/>
+                    })
+                }
             </ul>   
         </section>
     </section>
 </Layout>
 <script>
-// const menuType = document.querySelectorAll(".menuLinks > a");
-// const pita = menuType[0];
-// const platte = menuType[1];
-// const bowls = menuType[2];
-// const sides = menuType[3];
-// const drinks = menuType[4];
-// console.log(pita, platte, bowls, sides, drinks);
-// console.log(menuType);
-</script>
+    // Fang tabsen
+    const tabs = document.querySelectorAll(".menuLinks > a");
+    // Find ud hvad hver tab indholder 
+    tabs.forEach(tab => {
+        const tabName = tab.textContent;
+        // console.log(tabName);
+    })
 
+</script>
 
 <style>
 .menu {
