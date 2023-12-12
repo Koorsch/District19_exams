@@ -3,16 +3,22 @@ import Layout from "../layouts/Layout.astro";
 import Product from "../components/Product.astro";
 import "../css/global.css";
 
-// const apiEndpoint = "https://jgiscxohiqtteuwqyfad.supabase.co/rest/v1/menu";
-// const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpnaXNjeG9oaXF0dGV1d3F5ZmFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Njg0MjgsImV4cCI6MjAxNjE0NDQyOH0.ioDBej7LRKgrKtxrX7F7ia4lbG2PqH49mwQZHvOb0X4";
+const apiEndpoint = "https://jgiscxohiqtteuwqyfad.supabase.co/rest/v1/menu";
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpnaXNjeG9oaXF0dGV1d3F5ZmFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Njg0MjgsImV4cCI6MjAxNjE0NDQyOH0.ioDBej7LRKgrKtxrX7F7ia4lbG2PqH49mwQZHvOb0X4";
 
-// const fullMenu = await fetch(apiEndpoint, {
-//     method: "GET",
-//     headers: {
-//         apikey: apiKey,
-//     },
-// }).then((res) => res.json());
-const {fullMenu} = Astro.props;
+const fullMenu = await fetch(apiEndpoint, {
+    method: "GET",
+    headers: {
+        apikey: apiKey,
+    },
+});
+
+const data = await fullMenu.json();
+
+// Sort the data by ID in ascending order
+const sortedData = data.sort((a, b) => a.id - b.id);
+
+console.log(sortedData);
 ---
 <Layout title="Falafel Factory - Menukort">
     <section class="menu">
@@ -33,7 +39,7 @@ const {fullMenu} = Astro.props;
 
                 <h1>Udkommentere mapen hvis du skal kigge på opsætning</h1>
                 {
-                    fullMenu.map(menuItems => {
+                    sortedData.map(menuItems => {
                         return <Product menuItem={menuItems} buttonVariant="primary" buttonText="Tilføj"/>
                     })
                 }

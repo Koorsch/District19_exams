@@ -6,25 +6,30 @@ import ProductSection from "../components/ProductSection.astro";
 const apiEndpoint = "https://jgiscxohiqtteuwqyfad.supabase.co/rest/v1/menu";
 const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpnaXNjeG9oaXF0dGV1d3F5ZmFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Njg0MjgsImV4cCI6MjAxNjE0NDQyOH0.ioDBej7LRKgrKtxrX7F7ia4lbG2PqH49mwQZHvOb0X4";
 
-const fullMenu = await fetch("https://jgiscxohiqtteuwqyfad.supabase.co/rest/v1/menu/", {
+const fullMenu = await fetch(apiEndpoint, {
     method: "GET",
     headers: {
-        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpnaXNjeG9oaXF0dGV1d3F5ZmFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Njg0MjgsImV4cCI6MjAxNjE0NDQyOH0.ioDBej7LRKgrKtxrX7F7ia4lbG2PqH49mwQZHvOb0X4",
+        apikey: apiKey,
     },
 });
+
 const data = await fullMenu.json();
-console.log(data);
+
+// Sort the data by ID in ascending order
+const sortedData = data.sort((a, b) => a.id - b.id);
+
+console.log(sortedData);
 
 ---
 
-<Layout title="Falafel Factory">
-    <!-- <ProductSection sectionText="Vores populære rætter">
-        <Product dataItem={data.index.id} buttonVariant="primary" buttonText="Tilføj"/>
-        <Product dataItem={data[2]} buttonVariant="primary" buttonText="Tilføj"/>
-        <Product dataItem={data[3]} buttonVariant="primary" buttonText="Tilføj"/>
-    </ProductSectionection> -->
+<!-- <Layout title="Falafel Factory">
+     <ProductSection sectionText="Vores populære rætter">
+        <Product dataItem={sortedData} buttonVariant="primary" buttonText="Tilføj"/>
+        <Product dataItem={sortedData} buttonVariant="primary" buttonText="Tilføj"/>
+        <Product dataItem={sortedData} buttonVariant="primary" buttonText="Tilføj"/>
+    </ProductSectionection>
 
-</Layout>
+</Layout> -->
 
 <script></script>
 
