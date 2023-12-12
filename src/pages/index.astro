@@ -5,9 +5,11 @@ import Hero from "../components/Hero_Small.astro";
 import Product from "../components/Product.astro";
 import ProductSection from "../components/ProductSection.astro";
 import Section from "../components/Section.astro";
+import Button from "../components/Button.astro";
 
-const {Image} = Astro.props;
-const {imageVariant} = Astro.props;
+
+
+
 ---
 
 <Layout imageVariant="stor" title="Falafel Factory" Image="/heroImg/Hero_Home.png">
@@ -40,16 +42,20 @@ const {imageVariant} = Astro.props;
         buttonText="Tilføj ordre"
         price="70">
     </Product>
+    <Button buttonVariant="tertiary" buttonText="SE HELE MENUEN"/>
+   
 </Section>
-<Section 
-    sectionHeader="om os"
-    sectionVariant="2col">
-    <div>
-        <p>Lidt text</p>
-    </div>
+<Section
+    sectionHeader="VI TILBYDER CATERING TIL DIT NÆSTE EVENT"
+    sectionVariant="2col"
+    sectionBackground="sectionWhite">
     <div class="sectionImg">
         <img src="#" alt="Et billede">
     </div>
+    <div>
+        <p>Medbring den fulde Falafel Factory oplevelse hvor som helst! Vi fokuserer på kvalitet af ingredienser, som vi gerne vil dele med dig og dine gæster.</p>
+    </div>
+    <span></span>
 </Section>
 </Layout/>
     

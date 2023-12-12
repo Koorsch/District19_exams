@@ -1,12 +1,30 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TilbehorForm from "../components/tilbehorForm.astro";
+import Section from "../components/Section.astro";
 
 const {Image} = Astro.props;
 const {imageVariant} = Astro.props;
 ---
 
 <Layout imageVariant="lille" Image="/heroImg/Hero_Catering.png"  title="Falafel Factory - CATERING">
-
+    <Section 
+    sectionHeader="Catering til dit næste event?"
+    sectionVariant="3col">
+    <div>
+        <p>Medbring den fulde Falafel Factory oplevelse hvor som helst. Vores catering tilbydes til alle typer af begivenheder, og vores retter består af samme gode kvalitet som i vores butik. Vælg imellem vores mindre frokost pakke eller vores all exclusive pakke. Du er også altid velkommen til at tage kontakt til os, så vi i fælleskab kan sammensætte den perfekte menu, efter netop dine  og dine gæsters behov. </p>
+    </div>
+    <span></span>
+  
+</Section>
+<Section 
+    sectionHeader="Catering til dit næste event?"
+    sectionVariant="2col">
+    <div>
+        <p>Medbring den fulde Falafel Factory oplevelse hvor som helst. Vores catering tilbydes til alle typer af begivenheder, og vores retter består af samme gode kvalitet som i vores butik. Vælg imellem vores mindre frokost pakke eller vores all exclusive pakke. Du er også altid velkommen til at tage kontakt til os, så vi i fælleskab kan sammensætte den perfekte menu, efter netop dine  og dine gæsters behov. </p>
+    </div>
+    <span></span>
+  
+</Section>
 <TilbehorForm/>
 </Layout>

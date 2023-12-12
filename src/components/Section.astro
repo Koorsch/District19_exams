@@ -1,8 +1,8 @@
 ---
-const {sectionHeader, sectionVariant} = Astro.props;
+const {sectionHeader, sectionVariant, sectionBackground} = Astro.props;
 ---
 
-<section>
+<section data-variant={sectionBackground}>
     <h2>{sectionHeader}</h2>
     <div data-variant={sectionVariant}>
         <slot/>
@@ -10,14 +10,37 @@ const {sectionHeader, sectionVariant} = Astro.props;
 </section>
 
 <style>
+
+[data-variant="sectionGreen"] {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px auto;
+       
+        margin: auto;
+        justify-items: left;
+        align-items: left;
+
+}
+[data-variant="sectionWhite"] {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px auto;
+        background-color:white ;
+       
+        margin: auto;
+        justify-items: left;
+        align-items: left;
+
+}
     section {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 80px auto;
-        width: 90%;
+       
         margin: auto;
-        justify-items: center;
-        align-items: center;
+        justify-items: left;
+        align-items: left;
+        
     }
     h2 {
         text-transform: uppercase;
@@ -34,12 +57,13 @@ const {sectionHeader, sectionVariant} = Astro.props;
 }
 [data-variant="3col"] {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-items: center;
+    justify-items: left;
     background-color: pink;
 }
 [data-variant="2col"] {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-items: center;
+    background-color: white;
 }
 [data-variant="1col"] {
     grid-template-columns: 1fr;
