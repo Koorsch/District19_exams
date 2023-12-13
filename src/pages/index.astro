@@ -1,12 +1,26 @@
 ---
 
 import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
 import Hero from "../components/Hero_Small.astro";
 import Product from "../components/Product.astro";
 import ProductSection from "../components/ProductSection.astro";
 import Section from "../components/Section.astro";
-import Button from "../components/Button.astro";
+
 import "../css/global.css";
+const apiEndpoint = "https://jgiscxohiqtteuwqyfad.supabase.co/rest/v1/menu";
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpnaXNjeG9oaXF0dGV1d3F5ZmFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Njg0MjgsImV4cCI6MjAxNjE0NDQyOH0.ioDBej7LRKgrKtxrX7F7ia4lbG2PqH49mwQZHvOb0X4";
+
+const fullMenu = await fetch(apiEndpoint, {
+    method: "GET",
+    headers: {
+        apikey: apiKey,
+    },
+});
+const data = await fullMenu.json();
+const sortedData = data.sort((a, b) => a.id - b.id);
+
+
 
 
 
@@ -15,32 +29,11 @@ import "../css/global.css";
 <Layout imageVariant="stor" title="Falafel Factory" Image="/heroImg/Hero_Home.png">
    
     <ProductSection sectionText="Vores populære rætter" sectionVariant="3col">
-        <Product 
-        imgSrc="retter/freestylepita.webp" 
-        imgAlt="En spicy carrot pita" 
-        headerText="Spicy Carrot"
-        description="Fetaost, cherrytomater, valnødder, mynte, hummus, persillesalat og tahindressing" 
-        buttonVariant="primary" 
-        buttonText="Tilføj ordre"
-        price="80">
-    </Product>
-    <Product 
-        imgSrc="retter/kukupita.webp" 
-        imgAlt="Kuku Pita" 
-        headerText="Kuku Pita" 
-        description="Kartoffelomelet med krydderurter, hummus, persillesalat og tahindressing"
-        buttonVariant="primary" 
-        buttonText="Tilføj ordre"
-        price="80">
-    </Product>
-    <Product 
-        imgSrc="retter/rootspita.webp" 
-        imgAlt="Roots Pita" 
-        headerText="Roots Pita" 
-        description="Rødbede falafler, tahin, rødkålssalat, dukkah og tahindressing"
-        buttonVariant="primary" 
-        buttonText="Tilføj ordre"
-        price="70">
+        {
+            sortedData.slice(0,3).map ((menuItem) => {
+                return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonText="Tilføj" buttonVariant="primary"/>
+            }) 
+        }
     </Product>
     <Button buttonVariant="tertiary" buttonText="SE HELE MENUEN"/>
    

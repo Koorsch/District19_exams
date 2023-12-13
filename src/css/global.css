@@ -43,6 +43,11 @@ h4 {
 p {
   font-size: 24px;
 }
+a {
+  text-decoration: none;
+  text-align: center;
+  font-size: larger;
+}
 .light-mode {
   background-color: var(--ff-white);
   color: var(--ff-green);
