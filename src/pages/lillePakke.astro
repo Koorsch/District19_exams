@@ -1,26 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import TilbehorForm from "../components/tilbehorForm.astro";
-import Section from "../components/Section.astro";
+import Pakker from "../components/Pakker2.astro";
 
 const {Image} = Astro.props;
 const {imageVariant} = Astro.props;
 ---
 
 <Layout imageVariant="lille" Image="/heroImg/Hero_Catering.png"  title="Falafel Factory - CATERING">
-    <Section
-    sectionVariant="1col"
-    imgVariant="imgRight"
-    imgType="imgCenter"
-    span="span3"
-    sectionBackground="sectionWhite"
-    sectionTitle="Catering til dit næste event?"
-    sectionText="Medbring den fulde Falafel Factory oplevelse hvor som helst. Vores catering tilbydes til alle typer af begivenheder, og vores retter består af samme gode kvalitet som i vores butik. Vælg imellem vores mindre frokost pakke eller vores all exclusive pakke. Du er også altid velkommen til at tage kontakt til os, så vi i fælleskab kan sammensætte den perfekte menu, efter netop dine  og dine gæsters behov."
-    sectionImg=""
-    sectionAlt=""
-    buttonVariant="4th" 
-    buttonText="Læs mere">
-        
-    </Section>
-<TilbehorForm/>
+    <Pakker
+    sectionBackground=""
+    sectionVariant=""
+    PakkeTitle="120,- PR. KUVERT"
+    PakkeTekst="Vores lille cateringpakke er uden dessert. Den er perfekt til dem, der ønsker en lækker smagsoplevelse til en mere overkommelig pris."
+    ForretTekst="Frisklavet hummus og babaganoush serveret med sprøde grøntsagsstænger og luftige pitabrød."
+    Hovedret1="Vores berømte og saftige falafelkugler serveret med frisklavet tzatziki og hummus."
+    Hovedret2="Grillede halloumi-oste med vores hemmelige krydderiblanding."
+    Hovedret3="Sprøde, farverige grøntsagsspyd."
+    DessertTekst="Vores signatur baklava og frisk frugtsalat."
+    imgType=""
+    imgSrc="\Pakke_Lille_Hoej.webp"
+    imgAlt=""
+    ></Pakker>
 </Layout>
+
