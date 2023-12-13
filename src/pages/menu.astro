@@ -1,16 +1,191 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MobileOrder from "../components/MobileOrder.astro";
-const {Image} = Astro.props;
-const {imageVariant} = Astro.props;
-const {sectionBackgroud} = Astro.props
+import Product from "../components/Product.astro";
+
+const apiEndpoint = "https://jgiscxohiqtteuwqyfad.supabase.co/rest/v1/menu";
+const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpnaXNjeG9oaXF0dGV1d3F5ZmFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Njg0MjgsImV4cCI6MjAxNjE0NDQyOH0.ioDBej7LRKgrKtxrX7F7ia4lbG2PqH49mwQZHvOb0X4";
+
+const fullMenu = await fetch(apiEndpoint, {
+    method: "GET",
+    headers: {
+        apikey: apiKey,
+    },
+});
+
+
+const data = await fullMenu.json();
+const sortedData = data.sort((a, b) => a.id - b.id);
+const menu = sortedData;
+
+const {Image, imageVariant, sectionBackground} = Astro.props;
 ---
 
 <Layout imageVariant="lille"  Image="/heroImg/Hero_Menu.png" title="Falafel Factory - MENU">
     <MobileOrder/>
-<h1>Team19 - Menu</h1>
+        <section class="menu">
+            <section class="menuTab">
+                <ul class="menuChoice">
+                    <li class="menuLinks is-active"><a href="#pita">Pita</a></li>
+                    <li class="menuLinks"><a href="#platte">Platte</a></li>
+                    <li class="menuLinks"><a href="#salad">Bowls</a></li>
+                    <li class="menuLinks"><a href="#side">Sides</a></li>
+                    <li class="menuLinks"><a href="#drink">Drinks</a></li>
+                </ul>
+            </section>
+            <section class="menuSelection">
+                <ul class="popularItems is-active">                   
+                        {menu.slice(0,3).map(menuItem => {
+                                    if (menuItem) {
+                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj"/>;
+                                    }})} 
+                </ul>
+                <ul class="menu-dishes" id="pita">
+                        {menu.map(menuItem => {
+                                    if (menuItem.type == 'pita') {
+                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj"/>;
+                                    }})} 
+                </ul>
+                <ul class="menu-dishes" id="platte">
+                        {menu.map(menuItem => {
+                                    if (menuItem.type == 'platte') {
+                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj"/>;
+                                    }})} 
+                </ul>
+                <ul class="menu-dishes" id="salad">
+                        {menu.map(menuItem => {if (menuItem.type == 'salad') {
+                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj"/>;
+                                    }})} 
+                </ul>
+                <ul class="menu-dishes" id="side">
+                        {menu.map(menuItem => {
+                                    if (menuItem.type == 'side') {
+                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj"/>;
+                                    }})} 
+                </ul>
+                <ul class="menu-dishes" id="drink">
+                        {menu.map(menuItem => {
+                                    if (menuItem.type == 'drink') {
+                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj"/>;
+                                    }})} 
+                </ul>
+            </section>
+        </section>
 </Layout>
+
+<script>
+    const tabs = document.querySelectorAll(".menu .menuTab .menuChoice li");
+    const sections = document.querySelectorAll(".menu-dishes");
+    const popular = document.querySelector(".popularItems");
+
+    tabs.forEach(tab => {
+        tab.addEventListener("click", e => {
+            e.preventDefault();
+            removeActiveTab();
+            addActiveTab(tab);
+        });
+    })
+
+    const removeActiveTab = () => {
+        popular.classList.remove("is-active");
+        tabs.forEach(tab => {
+            tab.classList.remove("is-active");
+    });
+        sections.forEach(section => {
+            section.classList.remove("is-active");
+        });
+    }
+    const addActiveTab = tab => {
+        tab.classList.add("is-active");
+        const href = tab.querySelector("a").getAttribute("href");
+        const matchingSection = document.querySelector(href);
+        matchingSection.classList.add("is-active");
+    }
+</script>
 
 <style>
 
+.menu-dishes, .popularItems {
+  display: none;
+  &.is-active {
+    display: flex;
+    gap: 1rem;
+    place-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+  }
+}
+.menuSelection {
+    display: flex;
+    place-content: center;
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+    overflow: hidden;
+}
+.menu {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.menuTab {
+    width: 85%;
+    margin: auto;
+    border-bottom: 3px solid var(--ff-green1);  
+
+}
+.menuChoice {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style: none;
+    width: 80%;
+    margin: auto;
+}
+.menuChoice > .menuLinks {
+    justify-content: center;
+}
+.menuLinks {
+    display:flex;
+    list-style: none;
+    height: 3rem;
+    width: 10rem;
+    box-sizing: content-box;
+    justify-content: space-between;
+    text-align: center;
+    align-content: center;
+}
+.menuLinks a {
+    text-decoration: none;
+    font-size: 2rem;
+    color: var(--ff-green1);
+}
+.menuLinks a:hover {
+    color: var(--ff-green2);
+}
+.menuLinks a:active {
+    text-decoration: underline;
+}
+.menuItems {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+.menuItems a {
+    font-size: larger;
+    text-decoration: none;
+}
+.dishes {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.singleDish {
+    list-style: none;
+    width: fit-content;
+}
 </style>

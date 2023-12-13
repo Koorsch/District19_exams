@@ -19,11 +19,9 @@ const {imageVariant} = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-
 	<body>
 		<Header />
 		<Hero Image={Image} imageVariant={imageVariant}/>
-		
 		<main>
 			<slot />
 		</main>

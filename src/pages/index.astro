@@ -20,62 +20,44 @@ const fullMenu = await fetch(apiEndpoint, {
 const data = await fullMenu.json();
 const sortedData = data.sort((a, b) => a.id - b.id);
 
-
-
-
-
 ---
 
-<Layout imageVariant="stor" title="Falafel Factory" Image="/heroImg/Hero_Home.png">
+<Layout imageVariant="stor" title="Falafel Factory" Image="../heroImg/Hero_Home.png">
    
     <ProductSection sectionText="Vores populære rætter" sectionVariant="3col">
-        {
-            sortedData.slice(0,3).map ((menuItem) => {
-                return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonText="Tilføj" buttonVariant="primary"/>
-            }) 
-        }
-    </Product>
-    <Button buttonVariant="tertiary" buttonText="SE HELE MENUEN"/>
-   
-</Section>
-<Section
-    sectionVariant="3col"
-    imgVariant="imgLeft"
-    span="span2"
-    sectionBackground="sectionWhite"
-    sectionTitle="VI TILBYDER CATERING TIL DIT NÆSTE EVENT"
-    sectionText="Medbring den fulde Falafel Factory oplevelse hvor som helst! Vi fokuserer på kvalitet af ingredienser, som vi gerne vil dele med dig og dine gæster."
-    sectionImg="/Vi_tilbyder_Catering.webp"
-    sectionAlt=""
-    buttonVariant="4th" 
-    buttonText="Læs mere">
-   
- 
-    
-</Section>
-<Section
-sectionVariant="4col"
-imgVariant="imgRight"
-imgType="imgCenter"
-span="span1"
-sectionBackground="sectionWhite"
-sectionTitle="Om Os"
-sectionText="Vi omfavner udvalgte opskrifter fra Mellemøsten, især den velkendte falafel der med en blid brise har fundet vej til vores butik i København. Vi tilfører vores eget personlige præg til traditionelle opskrifter, da vores passion er at udforske forskellige smagsoplevelser. Det kommer til udtryk i vores måde at kombinere forskellige køkkener på."
-sectionImg="/Om_os.webp"
-sectionAlt=""
-buttonVariant="4th" 
-buttonText="Læs mere">
-    
-</Section>
-</Layout/>
-
-
+            {
+                sortedData.slice(0,3).map ((menuItem) => {
+                    return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonText="Tilføj" buttonVariant="primary"/>
+                }) 
+            }
+        <Button buttonVariant="tertiary" buttonText="SE HELE MENUEN"/>
+    </ProductSection>
+    <Section
+        sectionVariant="3col"
+        imgVariant="imgLeft"
+        span="span2"
+        sectionBackground="sectionWhite"
+        sectionTitle="VI TILBYDER CATERING TIL DIT NÆSTE EVENT"
+        sectionText="Medbring den fulde Falafel Factory oplevelse hvor som helst! Vi fokuserer på kvalitet af ingredienser, som vi gerne vil dele med dig og dine gæster."
+        sectionImg="/Vi_tilbyder_Catering.webp"
+        sectionAlt=""
+        buttonVariant="4th" 
+        buttonText="Læs mere">
+    </Section>
+    <Section
+        sectionVariant="4col"
+        imgVariant="imgRight"
+        imgType="imgCenter"
+        span="span1"
+        sectionBackground="sectionWhite"
+        sectionTitle="Om Os"
+        sectionText="Vi omfavner udvalgte opskrifter fra Mellemøsten, især den velkendte falafel der med en blid brise har fundet vej til vores butik i København. Vi tilfører vores eget personlige præg til traditionelle opskrifter, da vores passion er at udforske forskellige smagsoplevelser. Det kommer til udtryk i vores måde at kombinere forskellige køkkener på."
+        sectionImg="/Om_os.webp"
+        sectionAlt=""
+        buttonVariant="4th" 
+        buttonText="Læs mere">
+    </Section>
+</Layout>
 
 <style>
-
-  
-
-  
-
-
 </style>
