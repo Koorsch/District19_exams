@@ -12,26 +12,25 @@ const fullMenu = await fetch(apiEndpoint, {
         apikey: apiKey,
     },
 });
-
 const data = await fullMenu.json();
-
-// Sort the data by ID in ascending order
 const sortedData = data.sort((a, b) => a.id - b.id);
 
-console.log(sortedData);
 
 ---
 
-<!-- <Layout title="Falafel Factory">
+<Layout title="Falafel Factory">
      <ProductSection sectionText="Vores populære rætter">
-        <Product dataItem={sortedData} buttonVariant="primary" buttonText="Tilføj"/>
-        <Product dataItem={sortedData} buttonVariant="primary" buttonText="Tilføj"/>
-        <Product dataItem={sortedData} buttonVariant="primary" buttonText="Tilføj"/>
-    </ProductSectionection>
+        {
+            sortedData.slice(0,3).map ((menuItem) => {
+                return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonText="Tilføj" buttonVariant="primary"/>
+            }) 
+        }
+    </ProductSection>
 
-</Layout> -->
+</Layout>
 
-<script></script>
+<script>
+</script>
 
 <style>
 </style>

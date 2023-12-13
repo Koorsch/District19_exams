@@ -1,17 +1,17 @@
 ---
 import Button from "./Button.astro";
 
-const {menuItem, buttonText, buttonVariant} = Astro.props;
+const {ret_billede, ret_desc, ret_navn, ret_pris, buttonText, buttonVariant} = Astro.props;
 ---
 
 <li class="product">
-    <img loading="lazy" class="productImg" src={menuItem.ret_billede} alt={menuItem.ret_navn}>
-        <h2>{menuItem.ret_navn}</h2>
-        <p class="textDesc">{menuItem.ret_desc}</p>
+    <img loading="lazy" class="productImg" src={ret_billede} alt={ret_navn}>
+        <h2>{ret_navn}</h2>
+        <p class="textDesc">{ret_desc}</p>
     <div class="buttonField">
         <Button buttonText={buttonText} buttonVariant={buttonVariant}/>
         <input type="button">
-        <h3>{menuItem.ret_pris},-</h3>
+        <h3>{ret_pris},-</h3>
     </div>
 </li>
 
