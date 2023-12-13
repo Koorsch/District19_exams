@@ -30,8 +30,11 @@ const sortedData = data.sort((a, b) => a.id - b.id);
                     return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonText="Tilføj" buttonVariant="primary"/>
                 }) 
             }
-        <Button buttonVariant="tertiary" buttonText="SE HELE MENUEN"/>
     </ProductSection>
+    <div class="alignRight">
+        <Button  buttonVariant="tertiary" buttonText="SE HELE MENUEN"/>
+    </div>
+   
     <Section
         sectionVariant="3col"
         imgVariant="imgLeft"
@@ -60,4 +63,11 @@ const sortedData = data.sort((a, b) => a.id - b.id);
 </Layout>
 
 <style>
+    .alignRight {
+        text-align: right;
+        align-items: center;
+        margin-bottom: 5%;
+        margin-right: 10%;
+        margin-top: 2%;
+    }
 </style>

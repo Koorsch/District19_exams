@@ -1,21 +1,78 @@
 ---
+import Button from "./Button.astro";
 const {Image, imageVariant} = Astro.props;
 
 ---
 
 
 
-<section>
-        <div class="hero">
-            <img data-variant={imageVariant} src={Image} alt="">
-        </div>
+<section id="section1">
+  <!-- Content for Section 1 -->
+  <div class="container">
+    <div class="title">
+      <img src="/logo/White_logo.webp" alt="">
+      <h3>Nørrebrogade 63, 2200</h3>
+      <Button class="button" buttonVariant="5th" buttonText="BESTIL NU"/>
+    </div>
+    <div class="hero">
+      <img data-variant={imageVariant} src={Image} alt="">
+    </div>
+  </div>
 </section>
 
+<section id="section2">
+  <!-- Content for Section 2 -->
+  <div class="container">
+    <div class="title">
+      <h3>Nørrebrogadddde 63, 2200</h3>
+    </div>
+    <div class="hero">
+      <img data-variant={imageVariant} src={Image} alt="">
+    </div>
+  </div>
+</section>
 
 <style>
+  #section2 {
+  display: none; /* Hide Section 2 by default */
+}
+
+.container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+h3 {
+  font-size: 1.2vw;
+  color: white;
+  margin-bottom: 10%;
+}
+
+
+.title {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    text-align: center;
+   /* Center the content within the title div */
+}
+
+.title img {
+    max-width: 20vw;
+    height: auto;
+    max-height: 100%; /* Optional: Set the maximum height to 100% of the container */
+}
 
 [data-variant="stor"] {
     width: 100%;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
       
       mask-image:url("/svg/maske_v2.svg");
   -webkit-mask-image:url("/svg/maske_v2.svg");
@@ -42,3 +99,12 @@ const {Image, imageVariant} = Astro.props;
 
 
 </style>
+
+<script>
+  document.querySelector('#section1 .button').addEventListener('click', function() {
+  // Hide Section 1
+  document.getElementById('section1').style.display = 'none';
+  // Show Section 2
+  document.getElementById('section2').style.display = 'block';
+});
+</script>

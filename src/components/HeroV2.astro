@@ -1,35 +1,66 @@
 ---
+import Button from "./Button.astro";
+const {Image, imageVariant} = Astro.props;
+
 ---
 
-    <section>
-    <div class="hero">
-       <img src="/heroImg/Hero_Home.png" alt="en test">
-    </div>
+
+
+<section>
+  <div class="container">
+  <div class="title">
+    <h1>Nørrebrogade 63, 2200</h1>
+    
+  </div>
+        <div class="hero">
+            <img data-variant={imageVariant} src={Image} alt="">
+        </div>
+      </div>
 </section>
 
 
 <style>
-    .hero {
-        width: auto;
-      
-        mask-image:url("/svg/maske_v2.svg");
-    -webkit-mask-image:url("/svg/maske_v2.svg");
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: top 0 left;
-    -webkit-mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: top 0 left;
-        
-        
-        
-   
-    }
+.container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+h1 {
+  font-size: 1.2vw;
+  color: white;
+  margin-bottom: 10%;
+}
 
-    .hero img {
-      width: 100%;
-       
-      
-    }
+
+.title {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    text-align: center;
+   /* Center the content within the title div */
+}
+
+.title img {
+    max-width: 20vw;
+    height: auto;
+    max-height: 100%; /* Optional: Set the maximum height to 100% of the container */
+}
+
+[data-variant="lille"] {
+    width: 100%;
+      mask-image:url("/heroImg/maske_small.svg");
+  -webkit-mask-image:url("/heroImg/maske_small.svg");
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: top 0 left;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: top 0 left;
+}
+
 
 </style>
