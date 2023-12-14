@@ -1,6 +1,7 @@
 ---
 import Button from "./Button.astro";
 const {Image, imageVariant} = Astro.props;
+const showTitle = true;
 
 ---
 
@@ -9,9 +10,18 @@ const {Image, imageVariant} = Astro.props;
 <section>
   <div class="container">
     <div class="title">
-      <img src="/logo/White_logo.webp" alt="">
-      <h3>Nørrebrogade 63, 2200</h3>
-      <Button class="button" buttonVariant="5th" buttonText="BESTIL NU"/>
+      {
+      showTitle ? (
+        <h1>Title</h1>
+      ) : (
+        <>
+          <img src="/logo/White_logo.webp" alt="">
+          <h3>Nørrebrogade 63, 2200</h3>
+          <Button class="button" buttonVariant="5th" buttonText="BESTIL NU"/>
+        </>
+      )
+    }
+
     </div>
     <div class="hero">
       <img data-variant={imageVariant} src={Image} alt="">

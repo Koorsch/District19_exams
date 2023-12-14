@@ -1,11 +1,9 @@
 ---
-const {buttonVariant, buttonText} = Astro.props;
+const {buttonVariant, buttonText,buttonLink} = Astro.props;
 ---
 
 <button data-variant={buttonVariant}>
-    <p>
-        {buttonText}
-    </p>
+    <a href={buttonLink}> {buttonText}</a>
 </button>
 
 <style>

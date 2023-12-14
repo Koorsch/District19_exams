@@ -8,6 +8,7 @@ import ProductSection from "../components/ProductSection.astro";
 import Section from "../components/Section.astro";
 
 import "../css/global.css";
+const showTitle = false;
 const apiEndpoint = "https://jgiscxohiqtteuwqyfad.supabase.co/rest/v1/menu";
 const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpnaXNjeG9oaXF0dGV1d3F5ZmFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDA1Njg0MjgsImV4cCI6MjAxNjE0NDQyOH0.ioDBej7LRKgrKtxrX7F7ia4lbG2PqH49mwQZHvOb0X4";
 
@@ -22,7 +23,7 @@ const sortedData = data.sort((a, b) => a.id - b.id);
 
 ---
 
-<Layout imageVariant="stor" title="Falafel Factory" Image="../heroImg/Hero_Home.png">
+<Layout imageVariant="stor" title="Falafel Factory" Image="../heroImg/Hero_Home.png" showTitle={showTitle}>
    
     <ProductSection sectionText="Vores populære rætter" sectionVariant="3col">
             {
