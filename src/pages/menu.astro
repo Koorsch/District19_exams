@@ -17,11 +17,12 @@ const fullMenu = await fetch(apiEndpoint, {
 const data = await fullMenu.json();
 const sortedData = data.sort((a, b) => a.id - b.id);
 const menu = sortedData;
+const showTitle = true;
 
 const {Image, imageVariant, sectionBackground} = Astro.props;
 ---
 
-<Layout imageVariant="lille"  Image="/heroImg/Hero_Menu.png" title="Falafel Factory - MENU">
+<Layout imageVariant="lille"  Image="/heroImg/Hero_Menu.png" title="Falafel Factory - MENU" showTitle={showTitle} heroTitle="Menu">
     <MobileOrder/>
         <section class="menu">
             <section class="menuTab">
@@ -34,13 +35,7 @@ const {Image, imageVariant, sectionBackground} = Astro.props;
                 </ul>
             </section>
             <section class="menuSelection">
-                <ul class="popularItems is-active">                   
-                        {menu.slice(0,3).map(menuItem => {
-                                    if (menuItem) {
-                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj"/>;
-                                    }})} 
-                </ul>
-                <ul class="menu-dishes" id="pita">
+                <ul class="menu-dishes is-active" id="pita">
                         {menu.map(menuItem => {
                                     if (menuItem.type == 'pita') {
                                         return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj"/>;
@@ -76,7 +71,7 @@ const {Image, imageVariant, sectionBackground} = Astro.props;
 <script>
     const tabs = document.querySelectorAll(".menu .menuTab .menuChoice li");
     const sections = document.querySelectorAll(".menu-dishes");
-    const popular = document.querySelector(".popularItems");
+   
 
     tabs.forEach(tab => {
         tab.addEventListener("click", e => {
@@ -87,7 +82,6 @@ const {Image, imageVariant, sectionBackground} = Astro.props;
     })
 
     const removeActiveTab = () => {
-        popular.classList.remove("is-active");
         tabs.forEach(tab => {
             tab.classList.remove("is-active");
     });
@@ -123,17 +117,20 @@ const {Image, imageVariant, sectionBackground} = Astro.props;
     height: auto;
     gap: 1rem;
     overflow: hidden;
+    padding-top:5rem;
 }
 .menu {
     width: 90%;
     display: flex;
     flex-direction: column;
     margin: auto;
+     
 }
 .menuTab {
     width: 85%;
     margin: auto;
-    border-bottom: 3px solid var(--ff-green1);  
+    border-bottom: 3px solid var(--ff-green1); 
+    padding-bottom:2rem;
 
 }
 .menuChoice {

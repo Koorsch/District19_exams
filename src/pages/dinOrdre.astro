@@ -2,10 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 const {Image} = Astro.props;
 const {imageVariant} = Astro.props;
+const showTitle = true;
 ---
 
 
-<Layout imageVariant="lille" Image="/heroImg/Hero_Ordre.png"  title="Falafel Factory - Din Ordre">
+<Layout imageVariant="lille" Image="/heroImg/Hero_Ordre.png"  title="Falafel Factory - Din Ordre" showTitle={showTitle} heroTitle="Din Ordre">
 
 
 </Layout>

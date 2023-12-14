@@ -6,12 +6,11 @@ const {ret_billede, ret_desc, ret_navn, ret_pris, buttonText, buttonVariant} = A
 
 <li class="product">
     <img loading="lazy" class="productImg" src=`../${ret_billede}` alt={ret_navn}>
-        <h4>{ret_navn}</h4>
+        <h3>{ret_navn}</h3>
         <p class="textDesc">{ret_desc}</p>
     <div class="buttonField">
         <Button buttonText={buttonText} buttonVariant={buttonVariant}/>
-        <input type="button">
-        <h3>{ret_pris},-</h3>
+        <h4>{ret_pris},-</h4>
     </div>
 </li>
 
@@ -23,7 +22,7 @@ const {ret_billede, ret_desc, ret_navn, ret_pris, buttonText, buttonVariant} = A
     margin-top: 500px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
+    grid-template-rows: 1fr balance;
     min-width: 280px;
     max-width: 460px;
     width: 100%;
@@ -51,14 +50,12 @@ const {ret_billede, ret_desc, ret_navn, ret_pris, buttonText, buttonVariant} = A
 }
 .buttonField {
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr;
-    justify-content: space-evenly;
+    grid-template-columns: 3fr 1fr;
+    justify-content: space-between;
     align-items: center;
     gap: 0.5rem;
     width: 100%;
     height: auto;
-}
-h3 {
 }
 input {
     width: 60px;

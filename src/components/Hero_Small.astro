@@ -1,33 +1,30 @@
 ---
 import Button from "./Button.astro";
-const {Image, imageVariant} = Astro.props;
-const showTitle = true;
-
+const {Image, imageVariant,heroTitle} = Astro.props;
+const { showTitle } = Astro.props;
 ---
-
-
 
 <section>
   <div class="container">
     <div class="title">
-      {
-      showTitle ? (
-        <h1>Title</h1>
+      {showTitle ? (
+         <div class="centered">
+      <h1>{heroTitle}</h1>
+    </div>
       ) : (
         <>
-          <img src="/logo/White_logo.webp" alt="">
+          <img src="/logo/White_logo.webp" alt="White Logo" />
           <h3>Nørrebrogade 63, 2200</h3>
-          <Button class="button" buttonVariant="5th" buttonText="BESTIL NU"/>
+          <Button class="button" buttonVariant="5th" buttonText="BESTIL NU" />
         </>
-      )
-    }
-
+      )}
     </div>
     <div class="hero">
-      <img data-variant={imageVariant} src={Image} alt="">
+      <img data-variant={imageVariant} src={Image} alt="Descriptive text" />
     </div>
   </div>
 </section>
+
 
 
 <style>
@@ -40,10 +37,26 @@ const showTitle = true;
     width: 100%;
     height: auto;
 }
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  height: 100%; 
+  padding-top:clamp(50px,5vw, 100px) ;
+}
 h3 {
-  font-size: 1.2vw;
+  font-size: clamp(0.5rem,2vw, 2rem);
+  text-wrap: balance;
   color: white;
   margin-bottom: 10%;
+}
+h1 {
+  font-size: clamp(3rem,5vw, 5.5rem);
+  font-weight: 200;
+  letter-spacing: 0.5rem;
+  color: white;
+  text-transform: uppercase;
+  text-wrap: balance;
 }
 
 
@@ -92,7 +105,22 @@ h3 {
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: top 0 left;
 }
-
+@media(max-width:768px){
+  h1 {
+  font-size: clamp(1.5rem,4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.5rem;
+  color: white;
+  text-transform: uppercase;
+}
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; 
+  height: 100%; 
+  padding-top: 20%;
+}
+}
 
 </style>
 

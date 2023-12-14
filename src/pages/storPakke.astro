@@ -5,9 +5,10 @@ import Pakker from "../components/Pakker.astro";
 
 const {Image} = Astro.props;
 const {imageVariant} = Astro.props;
+const showTitle = true;
 ---
 
-<Layout imageVariant="lille" Image="/heroImg/Hero_Catering.png"  title="Falafel Factory - CATERING">
+<Layout imageVariant="lille" Image="/heroImg/Hero_Catering.png"  title="Falafel Factory - CATERING" showTitle={showTitle} heroTitle="Den Store Pakke">
     <Pakker
     sectionBackground=""
     sectionVariant=""

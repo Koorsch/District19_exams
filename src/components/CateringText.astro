@@ -30,7 +30,7 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
     }
     .Catering {
         text-transform: uppercase;
-       font-size: 2.5rem;
+        font-size: clamp(2rem,4vw, 4rem);
        font-weight: 600;
        color: #556146;
        white-space: pre-line;
@@ -38,8 +38,9 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
 
     }
     .Husk {
+        text-wrap: balance;
         text-transform: uppercase;
-       font-size: 3rem;
+        font-size: clamp(2rem,3vw, 3rem);
        font-weight: 800;
        color: #556146;
        white-space: pre-line;
@@ -49,9 +50,10 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
     }
 
    p {
+    text-wrap: balance;
        margin-top: 3%;
        margin-bottom: 5%;
-       font-size: 2rem;
+       font-size: clamp(1rem,2vw, 2rem);
        line-height: 1.6;
        font-weight: 500;
       

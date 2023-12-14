@@ -40,18 +40,19 @@ const {sectionImg,imgType,span,imgVariant,sectionAlt,sectionTitle,sectionText, s
         margin-bottom: 5%;  
     }
     .span3 p {
-        font-size: 32px;
+        font-size: clamp(0.5rem,2vw, 2rem);
         font-weight: 00;
     }
     h2 {
        
-        font-size: 2vw;
+        font-size: clamp(1rem,2vw, 2rem);
         color: #556146;
+        margin-bottom: 4%;
     }
     p {
-        margin-top: 5%;
+        margin-top:0;
         margin-bottom: 5%;
-        font-size: 1.2vw;
+        font-size: clamp(0.6rem,1.2vw, 2rem);
         line-height: 1.6;
        
         color: #556146;
@@ -122,6 +123,7 @@ img {
 [data-variant="4col"] {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     justify-items: left;
+   
     
     
 }

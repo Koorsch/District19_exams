@@ -5,9 +5,10 @@ import VoresKoncept from "../components/VoresKoncept.astro";
 import "../css/global.css";
 const {Image} = Astro.props;
 const {imageVariant} = Astro.props;
+const showTitle = true;
 ---
 
-<Layout imageVariant="lille" Image="/heroImg/Hero_Om.png"  title="Falafel Factory - Om Os">
+<Layout imageVariant="lille" Image="/heroImg/Hero_Om.png"  title="Falafel Factory - Om Os" showTitle={showTitle} heroTitle="Om Os">
     <VoresKoncept/>
     <Section
     sectionVariant="3col"
