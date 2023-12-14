@@ -15,12 +15,12 @@ const {imgType,imgSrc,imgAlt, sectionVariant, sectionBackground,PakkeTitle,Pakke
             <h2>{PakkeTitle}</h2>
             <p class="presentation">{PakkeTekst}</p>
         
-            <h3>Forret:</h3>
+            <h6>Forret:</h6>
             <ul>
                 <li>{ForretTekst}</li>
             </ul>
         
-            <h3>Hovedret:</h3>
+            <h6>Hovedret:</h6>
             <ul>
                 <li>{Hovedret1}</li>
                 <li>{Hovedret2}</li>
@@ -45,36 +45,42 @@ const {imgType,imgSrc,imgAlt, sectionVariant, sectionBackground,PakkeTitle,Pakke
         margin-bottom: 20%;
     }
 
+    .presentation {
+        margin-bottom: 20%;
+    }
+
 .catering-package {
-            max-width: 400px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
         h2 {
             color: #556146;
-            font-size: 2vw;
+            
         }
-        h3 {
+        h6 {
             margin-bottom: 10%;
+            text-wrap: balance;
         }
 
         ul {
             margin-left: 2rem;
             padding: 0;
-            margin-bottom: 10%;
+            margin-bottom: 30px;
         }
 
         li {
-            margin-bottom: 10%;
-            line-height: 1.5;
-            font-size: 1.2vw;
+            margin-bottom: 40px;
+            line-height: 1;
+            font-size: clamp(0.5rem,2vw, 1.5rem);
             color: #556146;
             font-weight: 400;
+            text-wrap: balance;
         }
         p {
-       margin-top: 5%;
-       margin-bottom: 5%;
-       font-size: 1.2vw;
+       margin-top: 10%;
+       font-size: clamp(0.5rem,2vw, 1.8rem);
+       text-wrap: balance;
     
        font-weight: 500;
       

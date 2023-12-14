@@ -9,7 +9,7 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
        
         <div >
             <h2 class={classType}>{sectionTitle}</h2>
-            <p>{sectionText}</p>
+            <h5>{sectionText}</h5>
         </div>
         
     </div>
@@ -30,7 +30,6 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
     }
     .Catering {
         text-transform: uppercase;
-        font-size: clamp(2rem,4vw, 4rem);
        font-weight: 600;
        color: #556146;
        white-space: pre-line;
@@ -40,7 +39,6 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
     .Husk {
         text-wrap: balance;
         text-transform: uppercase;
-        font-size: clamp(2rem,3vw, 3rem);
        font-weight: 800;
        color: #556146;
        white-space: pre-line;
@@ -49,11 +47,10 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
 
     }
 
-   p {
+   h5 {
     text-wrap: balance;
        margin-top: 3%;
        margin-bottom: 5%;
-       font-size: clamp(1rem,2vw, 2rem);
        line-height: 1.6;
        font-weight: 500;
       
@@ -73,7 +70,6 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
 @media(max-width:768px){ 
     .Catering {
         text-transform: uppercase;
-       font-size: 1.5rem;
        font-weight: 600;
        color: #556146;
        white-space: pre-line;
@@ -81,10 +77,9 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
 
     }
 
-    p {
+    h5 {
        margin-top: 3%;
        margin-bottom: 5%;
-       font-size: 1rem;
        line-height: 1.6;
        font-weight: 500;
       
@@ -92,7 +87,6 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
    }
    .Husk {
         text-transform: uppercase;
-       font-size: 1.5rem;
        font-weight: 800;
        color: #556146;
        white-space: pre-line;

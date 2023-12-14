@@ -4,7 +4,7 @@
 
 <div class="navigation">
     <div class="left-side">
-      <span class="view-order">View Order</span>
+      <span class="view-order"><a href="">View Order</a> </span>
     </div>
     <div class="right-side">
       <span class="total-price">Total: 100 ,-</span>
@@ -14,6 +14,12 @@
 <style>
    .navigation {
       display: none;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline 1px;
     }
  @media(max-width:768px){
     * {
@@ -42,13 +48,9 @@
       flex: 1;
       text-align: center;
     }
-
-    /* Style for the "View Order" */
     .view-order {
       font-weight: bold;
     }
-
-    /* Style for the total price */
     .total-price {
       font-style: italic;
     }

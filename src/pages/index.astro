@@ -28,7 +28,7 @@ const sortedData = data.sort((a, b) => a.id - b.id);
     <ProductSection sectionText="Vores populære rætter" sectionVariant="3col">
             {
                 sortedData.slice(0,3).map ((menuItem) => {
-                    return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonText="Tilføj" buttonVariant="primary"/>
+                    return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonText="Tilføj Ordre" buttonVariant="primary"/>
                 }) 
             }
     </ProductSection>
