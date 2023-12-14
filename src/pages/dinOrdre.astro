@@ -3,7 +3,7 @@ import "../css/global.css";
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.astro";
 ---
-<Layout imageVariant="lille" Image="../heroImg/Hero_Ordre.png"  title="Falafel Factory - Din Ordre">
+<Layout imageVariant="lille" Image="../heroImg/Hero_Ordre.png"  title="Falafel Factory - Din Ordre" showTitle=false heroTitle="Din ordre">
     <section class="salesWindow">
         <div class="itemsCart">
             <h2>Din indkøbskurv</h2>
@@ -102,7 +102,7 @@ import Button from "../components/Button.astro";
                     </div>
                 </div>
                 <div>
-                    <Button buttonVariant="primary" buttonText="Til checkout" buttonLink=""/>
+                    <Button buttonVariant="primary" buttonText="Til checkout" buttonLink="#"/>
                 </div>
             </div>
         </div>
@@ -179,13 +179,6 @@ import Button from "../components/Button.astro";
         color: var(--ff-white1);
         padding: 1rem 0;
     }
-    .orderButtons {
-
-    }
-    .orderButton {
-
-    }
-
     .deliveryButtons {
         display: grid;
         grid-template-columns: 1fr 1fr;
