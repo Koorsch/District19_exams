@@ -56,3 +56,22 @@ a {
   background-color: var(--ff-green);
   color: var(ff-white);
 }
+
+@media(max-width:768px){ 
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 1.75rem;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 12px;
+  }
+
+}

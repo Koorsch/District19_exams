@@ -30,7 +30,7 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
     }
     .Catering {
         text-transform: uppercase;
-       font-size: 3.4vw;
+       font-size: 2.5rem;
        font-weight: 600;
        color: #556146;
        white-space: pre-line;
@@ -39,7 +39,7 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
     }
     .Husk {
         text-transform: uppercase;
-       font-size: 1.9vw;
+       font-size: 3rem;
        font-weight: 800;
        color: #556146;
        white-space: pre-line;
@@ -49,9 +49,9 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
     }
 
    p {
-       margin-top: 5%;
+       margin-top: 3%;
        margin-bottom: 5%;
-       font-size: 1.5vw;
+       font-size: 2rem;
        line-height: 1.6;
        font-weight: 500;
       
@@ -67,5 +67,37 @@ const {classType,sectionTitle,sectionText, sectionVariant, sectionBackground} = 
 [data-variant="1col"] {
     grid-template-columns: 1fr;
    
+}
+@media(max-width:768px){ 
+    .Catering {
+        text-transform: uppercase;
+       font-size: 1.5rem;
+       font-weight: 600;
+       color: #556146;
+       white-space: pre-line;
+		text-wrap:balance;
+
+    }
+
+    p {
+       margin-top: 3%;
+       margin-bottom: 5%;
+       font-size: 1rem;
+       line-height: 1.6;
+       font-weight: 500;
+      
+       color: #556146;
+   }
+   .Husk {
+        text-transform: uppercase;
+       font-size: 1.5rem;
+       font-weight: 800;
+       color: #556146;
+       white-space: pre-line;
+		text-wrap:balance;
+        margin-top: 2%;
+
+    }
+
 }
 </style>
