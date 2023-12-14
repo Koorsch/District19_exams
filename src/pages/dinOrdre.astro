@@ -1,15 +1,284 @@
 ---
+import "../css/global.css";
 import Layout from "../layouts/Layout.astro";
-const {Image} = Astro.props;
-const {imageVariant} = Astro.props;
+import Button from "../components/Button.astro";
+import ProductSmall from "../components/ProductSmall.astro";
+
+
 ---
 
 
-<Layout imageVariant="lille" Image="/heroImg/Hero_Ordre.png"  title="Falafel Factory - Din Ordre">
+<Layout imageVariant="lille" Image="../heroImg/Hero_Ordre.png"  title="Falafel Factory - Din Ordre">
+    <section class="salesWindow">
+        <div class="itemsCart">
+            <h2>Din indkøbskurv</h2>
+            <div class="itemsInCart">
+                <ul class="itemList">
+                    <li class="menuItem">
+                        <div class="itemText">
+                            <h3><span class="amount">1x</span>Spicy Carrot Pita</h3>
+                            <h4><span class="price">80</span>kr</h4>
+                            <div class="orderButtons">
+                                <input type="button" value="-">
+                                <span>2</span>
+                                <input type="button" value="+">
+                            </div>
 
+                        </div>
+                        <div class="itemImg">
+                            <figure>
+                                <img src="../media/img/retter/spicycarrotpita.webp" alt="En ret">
+                                <figcaption></figcaption>
+                            </figure>
+                        </div>
+                    </li>
+                    <li class="menuItem">
+                        <div class="itemText">
+                            <h3><span class="amount">1x</span>Lille Pomfritter</h3>
+                            <h4><span class="price">80</span>kr</h4>
+                            <div class="orderButtons">
+                                <input type="button" value="-">
+                                <span>2</span>
+                                <input type="button" value="+">
+                            </div>
 
+                        </div>
+                        <div class="itemImg">
+                            <figure>
+                                <img src="../media/img/side/pomfritter.webp" alt="En ret">
+                                <figcaption></figcaption>
+                            </figure>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="shoppingCart">
+            <h3>Ordretype og tid</h3>
+            <div class="delivery">
+                <div class="deliveryButtons">
+                    <button class="deliveryButton">
+                        <svg width="32" height="32">
+                            <image xlink:href="../media/svg/icons/running.svg" width="32" height="32" />
+                        </svg>
+                        Afhentning
+                    </button>
+                    <button class="deliveryButton">
+                        <svg width="32" height="32">
+                            <image xlink:href="../media/svg/icons/delivery.svg" width="32" height="32" />
+                        </svg>
+                        Leverering
+                    </button>
+                </div>
+                <div class="deliveryTime">
+                <button class="deliveryButton">10-20min</button>
+            </div>
+            </div>
+            <div class="orderWindow">
+                <ul class="listPrices">
+                    <li class="itemPrice">
+                        <p>Pris 1</p>
+                        <p><span>80</span>kr</p>
+                    </li>
+                    <li class="itemPrice">
+                        <p>Pris 2</p>
+                        <p><span>20</span>kr</p>
+                    </li>
+                    <li class="itemPrice">
+                        <p>Servicegebyr</p>
+                        <p><span>39</span>kr</p>
+                    </li>
+                    <li class="itemPrice totalPrice">
+                        <p>Total</p>
+                        <p><span>139</span>kr</p>
+                    </li>
+                </ul>
+                <div class="discount">
+                    <div class="discountBox">
+                        <label for="discountText">
+                            <input type="text" placeholder="Rabatkode" id="discountText">
+                        </label>
+                        <label for="discountButton">
+                            <input type="button" value="Anvend" id="discountButton">
+                        </label>
+
+                    </div>
+                    <div class="paymentMethods">
+                        <figure>
+                            <img src="../media/img/betaling.webp" alt="Vælg mellem forskellige betalingsmåder som Visa, Mobilepay, MasterCard og Dankort">
+                        </figure>
+                    </div>
+                </div>
+                <div>
+                    <Button buttonVariant="primary" buttonText="Til checkout" buttonLink=""/>
+                </div>
+            </div>
+        </div>
+    </section>
 </Layout>
 
 <style>
-    
+    .salesWindow {
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+        background-color: white;
+        gap: 2rem;
+    }
+    .itemsCart {
+        display: grid;
+        gap: 1rem;
+        width: 100%;
+        height: fit-content;
+        padding-left: 2rem;
+    }
+    .itemsInCart {
+        width: 100%;
+        height: 100%;
+        display: grid;
+    }
+    .itemList {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;s
+    }
+    .menuItem {
+        display: grid;
+        padding: 2rem 0;
+        gap: 1rem;
+        border-top: 2px solid var(--ff-green1);
+        grid-template-columns: 2fr 1fr;
+    }
+    .itemText .amount {
+        padding-right: 1rem;
+    }
+    .itemText {
+        padding-left: 1rem;
+        min-width: 200px;
+        width: 100%;
+
+    }
+    .itemImg {
+        width: 100%;
+        height: auto;
+    }
+    figure {
+        height:auto;
+        width: 100%;
+    }
+    .orderButtons input {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+    .itemImg figure img {
+        height: auto;
+        min-width: 150px;
+        max-width: 350px;
+        width: 100%;
+    }
+    .shoppingCart {
+        background-color: var(--ff-green1);
+        place-content: center;
+        padding: 2rem;
+        min-width: 300px;
+        display: grid;
+    }
+    .shoppingCart h3 {
+        color: var(--ff-white1);
+        padding: 1rem 0;
+    }
+    .orderButtons {
+
+    }
+    .orderButton {
+
+    }
+
+    .deliveryButtons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-top: 1rem;
+    }
+    .deliveryButton {
+        display: flex;
+        flex-wrap: wrap;
+        gap:2rem;
+        justify-content: center;
+        align-items: center;
+        padding:0.75rem;
+        border-radius: 0.25rem;
+        box-sizing: content-box;
+        border: var(--ff-green2) 1px solid;
+    }
+    .deliveryTime {
+        padding-bottom: 1rem;
+    }
+    .orderPrice {
+        margin: 3rem;
+        border-radius: 2rem;
+        background-color: var(--ffwhite-1);
+    }
+    .orderWindow {
+        display: grid;
+        background-color: var(--ff-white2);
+        border-radius: 3rem;
+        width: fit-content;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+    .orderWindow div:nth-child(3){
+        justify-self: center;
+    }
+    .listPrices {
+        padding: 2rem 2rem 0 2rem;
+        display: grid;
+
+    }
+    .itemPrice {
+        display: flex;
+        padding: 0.25rem 0;
+        justify-content: space-between;
+    }
+    .itemPrice.totalPrice {
+        height: fit-content;
+        padding: 1rem;
+        border-top: 2px solid var(--ff-green1);
+    }
+    .discount {
+        padding: 1rem 2rem 2rem 2rem;
+    }
+    .discountBox {
+        display: flex;
+    }
+    .discountBox input {
+        font-family: var(--ff-font);
+        background-color: white;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+        border: 1px solid ;
+    }
+    #discountButton {
+        height: auto;
+        width: fit-content;
+    }
+    .paymentMethods {
+        display: flex;
+        
+    }
+
+    @media (max-width: 600px) {
+        .itemsCart {
+            justify-content: center;
+        }
+        .menuItem {
+            grid-template-columns: 1fr;
+            justify-content: center;
+        }
+        .itemImg figure img {
+            padding-left: 1rem;
+    }
+        h2 {
+            text-align: center;
+        }
+    }
 </style>
