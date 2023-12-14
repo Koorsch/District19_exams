@@ -6,8 +6,7 @@ const {Image, imageVariant} = Astro.props;
 
 
 
-<section id="section1">
-  <!-- Content for Section 1 -->
+<section>
   <div class="container">
     <div class="title">
       <img src="/logo/White_logo.webp" alt="">
@@ -20,22 +19,9 @@ const {Image, imageVariant} = Astro.props;
   </div>
 </section>
 
-<section id="section2">
-  <!-- Content for Section 2 -->
-  <div class="container">
-    <div class="title">
-      <h3>Nørrebrogadddde 63, 2200</h3>
-    </div>
-    <div class="hero">
-      <img data-variant={imageVariant} src={Image} alt="">
-    </div>
-  </div>
-</section>
 
 <style>
-  #section2 {
-  display: none; /* Hide Section 2 by default */
-}
+
 
 .container {
     position: relative;
@@ -101,10 +87,5 @@ h3 {
 </style>
 
 <script>
-  document.querySelector('section1 .button').addEventListener('click', function() {
-  // Hide Section 1
-  document.getElementById('section1').style.display = 'none';
-  // Show Section 2
-  document.getElementById('section2').style.display = 'block';
-});
+
 </script>
