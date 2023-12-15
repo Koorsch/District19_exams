@@ -30,13 +30,16 @@
 
 footer {
     display: flex;
-    width: 100%;
+    border-top: 2px solid var(--ff-green2);
+    padding-top: 2rem;
+    width: 90%;
+    margin: auto;
     padding: 1rem;
     flex-direction: row;
     gap:1rem;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 .googleMaps {
     min-width: 280px;
@@ -47,7 +50,7 @@ footer {
 .contactInfo {
     display: flex;
     flex-direction: column;
-    width: 290px;
+    width: 250px;
 }
 #contact {
     list-style: none;
@@ -58,11 +61,18 @@ footer {
     height: 200px;
     align-items: center;
 }
+.iconTab a {
+    display: flex;
+}
+.mediaLogo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 #logo {
     display: flex;
     height: auto;
     width: 100%;
-    
+    justify-content: center;
 }
 #logo img {
     min-width: 120px;
