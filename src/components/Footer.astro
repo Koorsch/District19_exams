@@ -36,7 +36,7 @@ footer {
     margin: auto;
     padding-top: 5rem;
     flex-direction: row;
-    gap: 1rem;
+    gap: 2rem;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
@@ -45,7 +45,7 @@ footer {
 .googleMaps {
     min-width: 280px;
     max-width: 400px;
-    width: 100%;
+    width: 100%;    
     height: auto;
 }
 .contactInfo {
@@ -99,10 +99,10 @@ footer {
 }
 .icons h3, .contactInfo h3 {
     padding-bottom: 1rem;
-    text-align: center;
+
 }
 
-@media (min-width: 450px) {
+@media (max-width: 450px) {
 footer {
     gap: 3rem;
 }
@@ -110,8 +110,8 @@ footer {
     grid-template-columns: 1fr auto;
     gap: 2rem;
 }
-.icons h3, .contactInfo h3 {
-    text-align: left;
+.contactInfo {
+    text-align: center;
 }
 }
 </style>
