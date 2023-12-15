@@ -22,12 +22,13 @@ const {ret_billede, ret_desc, ret_navn, ret_pris, buttonText, buttonVariant} = A
     margin-top: 500px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr balance;
+    grid-template-rows: 200px 40px 60px;
     min-width: 280px;
     max-width: 460px;
     width: 100%;
     gap: 1rem;
     margin: 0.25rem;
+    height: 400px;
 }
 .productText {
     display: grid;
@@ -38,10 +39,11 @@ const {ret_billede, ret_desc, ret_navn, ret_pris, buttonText, buttonVariant} = A
 .productImg {
     object-fit: cover;
     object-position: center;
-    height: auto;
+    height: 200px;
     width: 100%;
     min-width: 280px;
     max-width: 500px;
+    
 }
 .product > div {
     /* margin: 0.25rem; */
@@ -49,6 +51,8 @@ const {ret_billede, ret_desc, ret_navn, ret_pris, buttonText, buttonVariant} = A
 .textDesc {
     color: #556146;
     font-weight: 400;
+    height: 100px;
+    overflow: hidden;
 }
 .buttonField {
     display: grid;
@@ -57,7 +61,9 @@ const {ret_billede, ret_desc, ret_navn, ret_pris, buttonText, buttonVariant} = A
     align-items: center;
     gap: 0.5rem;
     width: 100%;
-    height: auto;
+    height: 100px;
+    overflow: hidden;
+    
 }
 input {
     width: 60px;
@@ -66,5 +72,18 @@ input {
 h3 {
     font-weight: 600;
 }
-
+@media(max-width:768px){
+.product {
+    margin-top: 500px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 30px 20px;
+    min-width: 280px;
+    max-width: 460px;
+    width: 100%;
+    gap: 1rem;
+    margin: 0.25rem;
+    height: 400px;
+}
+}
 </style>

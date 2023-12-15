@@ -64,5 +64,29 @@ Vi ønsker at viderebringe den friturestegte bolle af mosede kikærter på en ek
         grid-column: 2;
         margin-left:30%;
     }
+    @media(max-width:768px){ 
+        .grid_1_1 {
+        display: grid;
+        grid-template-columns: 1fr;
+    justify-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 5%;
+    }
+    .grid_item:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    .grid_item:nth-child(2) {
+        grid-column: 1;
+        margin-top: 5%;
+       
+    }
+    .grid_item:nth-child(3) {
+        grid-column: 1;
+      
+    }
+
+    }
   
 </style>
