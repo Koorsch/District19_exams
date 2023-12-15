@@ -105,8 +105,9 @@ import Button from "../components/Button.astro";
     .salesWindow {
         margin: auto;
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(320px, 600px);
         background-color: white;
+        justify-content: center;
         gap: 2rem;
     }
     .itemsCart {
@@ -150,7 +151,7 @@ import Button from "../components/Button.astro";
         width: 1.5rem;
         height: 1.5rem;
     }
-    .itemImg img {
+    .itemImg img, .paymentMethods img {
         height: auto;
         width: 100%;
     }
@@ -161,7 +162,7 @@ import Button from "../components/Button.astro";
         grid-template-columns: 1fr;
         grid-template-rows: auto auto 1fr;
         justify-items: center;
-        padding-bottom: 1rem;
+        padding: 1rem;
     }
     .shoppingCart h3 {
         color: var(--ff-white1);
