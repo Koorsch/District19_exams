@@ -2,33 +2,100 @@
 ---
 
 <footer>
-    <div class="topBorder"></div>
-        <div class="googleMaps">
-            <img src="../media/img/maps.webp" alt="placeholder Google maps">
-        </div>
-        <ul class="contactInfo">
+        <img class="googleMaps" src="../media/img/maps.webp" alt="placeholder Google maps">
+        <div class="contactInfo">
             <h3>Kontakt</h3>
-            <div id="contact">
+            <ul id="contact">
                 <li>Nørrebrogade 63, 2200</li>
                 <li>+45 52 40 63 63</li>
                 <li><a href="mailto:info@falafelfactory.dk">info@falafelfactory.dk</a></li>
-            </div>
-        </ul>
-            <div class="mediaLogo">
+            </ul>
+        </div>
+        <div class="iconTab">
+            <div class="icons">
                 <h3>Social Media</h3>
-                <div>
-                    <img src="../media/svg/icons/facebook.svg" alt="Facebook">
-                    <img src="../media/svg/icons/instagram.svg" alt="Instagram">
+                <div class="mediaLogo">
+                    <a href="https://www.facebook.com/falafelfactorycph?fref=ts"><img src="../media/svg/icons/facebook.svg" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/falafel_factory_cph/?hl=da"><img src="../media/svg/icons/instagram.svg" alt="Instagram"></a>
                 </div>
                     <img src="../media/img/tripadvisor.webp" alt="Tripadvisor anmeldelser 4.5 ud af 5 stjerner">
             </div>
             <div id="logo">
                     <img src="../media/img/footer_logo.webp" alt="Logotype">
             </div>
+        </div>
 </footer>
 
 <style>
+
+footer {
+    display: flex;
+    width: 100%;
+    padding: 1rem;
+    flex-direction: row;
+    gap:1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.googleMaps {
+    min-width: 280px;
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+    width: 290px;
+}
+#contact {
+    list-style: none;
+}
+.iconTab {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 200px;
+    align-items: center;
+}
+#logo {
+    display: flex;
+    height: auto;
+    width: 100%;
+    
+}
+#logo img {
+    min-width: 120px;
+    max-width: 200px;
+    min-height: 120px;
+    max-height: 200px;
+    height: auto;
+    width: auto;
+
+}
+.icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (min-width: 450px) {
     footer {
+        gap: 3rem;
+    }
+.iconTab {
+    grid-template-columns: 1fr auto;
+    gap: 2rem;
+}
+}
+
+
+
+
+
+
+    /* footer {
         overflow: hidden;
         display: flex;
         justify-content: space-evenly;
@@ -41,7 +108,6 @@
         margin-bottom: 2%;
     }
     .topBorder {
-        /* display: flex; */
         height: 2px;
         width: 100%;
         margin-bottom: 1rem;
@@ -90,6 +156,6 @@
     #logo img {
         width: 100%;
         height: auto;
-    }
+    } */
 
 </style>
