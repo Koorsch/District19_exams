@@ -1,6 +1,6 @@
 ---
 import Button from "./Button.astro";
-const {Image, imageVariant,heroTitle} = Astro.props;
+const {Image, imageVariant,heroTitle,ImageAlt} = Astro.props;
 const { showTitle } = Astro.props;
 ---
 
@@ -20,7 +20,7 @@ const { showTitle } = Astro.props;
       )}
     </div>
     <div class="hero">
-      <img data-variant={imageVariant} src={Image} alt="Descriptive text" />
+      <img data-variant={imageVariant} src={Image} alt={ImageAlt} />
     </div>
   </div>
 </section>
