@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import VoresKoncept from "../components/VoresKoncept.astro";
+
 import "../css/global.css";
 const {Image} = Astro.props;
 const {imageVariant} = Astro.props;
@@ -20,7 +21,9 @@ const showTitle = true;
     sectionImg="/Butikken.webp"
     sectionAlt="Et hyggeligt caféhjørne med et rustikt træbord og matchende stole. En væglampe kaster et varmt lys over bordet, og væggen bagved er dekoreret med hængende grønne planter i lyserøde potter, hvilket giver rummet en frisk og organisk følelse. På venstre side ses en del af en disk med synlig mad, hvilket antyder, at dette er en del af et serveringsområde. Billedet fremkalder en indbydende og afslappet atmosfære."
     buttonVariant="4th" 
-    buttonText="Se Menu">
+    buttonText="Se Menu"
+    buttonLink="/menu/">
+    
 </Section>
 
 

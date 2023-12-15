@@ -1,7 +1,7 @@
 ---
 import "../css/global.css";
 import Button from "../components/Button.astro";
-const {sectionImg,imgType,span,imgVariant,sectionAlt,sectionTitle,sectionText, sectionVariant, sectionBackground,buttonText,buttonVariant} = Astro.props;
+const {sectionImg,imgType,span,imgVariant,sectionAlt,sectionTitle,sectionText, sectionVariant, sectionBackground,buttonText,buttonVariant, buttonLink} = Astro.props;
 ---
 
 <section data-variant={sectionBackground}>
@@ -13,7 +13,7 @@ const {sectionImg,imgType,span,imgVariant,sectionAlt,sectionTitle,sectionText, s
         <div class={span}>
             <h2>{sectionTitle}</h2>
             <p>{sectionText}</p>
-            <Button buttonText={buttonText} buttonVariant={buttonVariant}/>
+            <Button buttonText={buttonText} buttonVariant={buttonVariant} buttonLink={buttonLink}/>
         </div>
         
     </div>
