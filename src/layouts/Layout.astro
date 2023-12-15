@@ -6,7 +6,7 @@ import Hero from '../components/Hero_Small.astro';
 
 const {title, mode} = Astro.props;
 const {Image} = Astro.props;
-const {imageVariant} = Astro.props;
+const {imageVariant,ImageAlt} = Astro.props;
 const {showTitle} = Astro.props;
 const {heroTitle}= Astro.props;
 
@@ -28,7 +28,7 @@ const {heroTitle}= Astro.props;
 	</head>
 	<body>
 		<Header />
-		<Hero Image={Image} imageVariant={imageVariant} showTitle={showTitle}  heroTitle={heroTitle}/>
+		<Hero Image={Image} imageVariant={imageVariant} showTitle={showTitle}  heroTitle={heroTitle} ImageAlt={ImageAlt}/>
 		<main>
 			<slot />
 		</main>
