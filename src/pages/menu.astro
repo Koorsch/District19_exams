@@ -38,30 +38,30 @@ const {Image, imageVariant, sectionBackground, sectionAlt} = Astro.props;
                 <ul class="menu-dishes is-active" id="pita">
                         {menu.map(menuItem => {
                                     if (menuItem.type == 'pita') {
-                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj"sectionAlt={menuItem.ret_navn + " med " + menuItem.ret_desc}/>;
+                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj" buttonLink="/dinOrdre/" sectionAlt={menuItem.ret_navn + " med " + menuItem.ret_desc}/>;
                                     }})} 
                 </ul>
                 <ul class="menu-dishes" id="platte">
                         {menu.map(menuItem => {
                                     if (menuItem.type == 'platte') {
-                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj" sectionAlt={menuItem.ret_navn + " med " + menuItem.ret_desc}/>;
+                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj" buttonLink="/dinOrdre/" sectionAlt={menuItem.ret_navn + " med " + menuItem.ret_desc}/>;
                                     }})} 
                 </ul>
                 <ul class="menu-dishes" id="salad">
                         {menu.map(menuItem => {if (menuItem.type == 'salad') {
-                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj" sectionAlt={menuItem.ret_navn + " med " + menuItem.ret_desc}/>;
+                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj" buttonLink="/dinOrdre/" sectionAlt={menuItem.ret_navn + " med " + menuItem.ret_desc}/>;
                                     }})} 
                 </ul>
                 <ul class="menu-dishes" id="side">
                         {menu.map(menuItem => {
                                     if (menuItem.type == 'side') {
-                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj" sectionAlt={menuItem.ret_navn + " med " + menuItem.ret_desc}/>;
+                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj" buttonLink="/dinOrdre/" sectionAlt={menuItem.ret_navn + " med " + menuItem.ret_desc}/>;
                                     }})} 
                 </ul>
                 <ul class="menu-dishes" id="drink">
                         {menu.map(menuItem => {
                                     if (menuItem.type == 'drink') {
-                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj" sectionAlt={menuItem.ret_navn + " med " + menuItem.ret_desc}/>;
+                                        return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonVariant="primary" buttonText="Tilføj" buttonLink="/dinOrdre/" sectionAlt={menuItem.ret_navn + " med " + menuItem.ret_desc}/>;
                                     }})} 
                 </ul>
             </section>

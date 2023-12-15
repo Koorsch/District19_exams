@@ -62,3 +62,8 @@ a {
   background-color: var(--ff-green);
   color: var(ff-white);
 }
+
+img {
+  width: 100%;
+  height: auto;
+}

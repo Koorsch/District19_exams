@@ -28,12 +28,12 @@ const sortedData = data.sort((a, b) => a.id - b.id);
     <ProductSection sectionText="Vores populære rætter" sectionVariant="3col">
             {
                 sortedData.slice(0,3).map ((menuItem) => {
-                    return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonText="Tilføj Ordre" buttonVariant="primary"/>
+                    return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonText="Tilføj Ordre" buttonVariant="primary" buttonLink="/menu/"/>
                 }) 
             }
     </ProductSection>
     <div class="alignRight">
-        <Button  buttonVariant="tertiary" buttonText="SE HELE MENUEN"/>
+        <Button  buttonVariant="tertiary" buttonText="SE HELE MENUEN" buttonLink="/menu/"/>
     </div>
    
     <Section
@@ -46,7 +46,8 @@ const sortedData = data.sort((a, b) => a.id - b.id);
         sectionImg="/Vi_tilbyder_Catering.webp"
         sectionAlt=""
         buttonVariant="4th" 
-        buttonText="Læs mere">
+        buttonText="Læs mere"
+        buttonLink="/catering/">
     </Section>
     <Section
         sectionVariant="4col"
@@ -59,7 +60,9 @@ const sortedData = data.sort((a, b) => a.id - b.id);
         sectionImg="/Om_os.webp"
         sectionAlt=""
         buttonVariant="4th" 
-        buttonText="Læs mere">
+        buttonText="Læs mere"
+        buttonLink="/omos/">
+        
     </Section>
 </Layout>
 

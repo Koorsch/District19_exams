@@ -1,7 +1,7 @@
 ---
 import Button from "./Button.astro";
 
-const {ret_billede, ret_desc, ret_navn, ret_pris, buttonText, buttonVariant} = Astro.props;
+const {ret_billede, ret_desc, ret_navn, ret_pris, buttonText, buttonVariant, buttonLink} = Astro.props;
 ---
 
 <li class="product">
@@ -9,7 +9,7 @@ const {ret_billede, ret_desc, ret_navn, ret_pris, buttonText, buttonVariant} = A
         <h3>{ret_navn}</h3>
         <p class="textDesc">{ret_desc}</p>
     <div class="buttonField">
-        <Button buttonText={buttonText} buttonVariant={buttonVariant}/>
+        <Button buttonText={buttonText} buttonVariant={buttonVariant} buttonLink={buttonLink}/>
         <h4>{ret_pris},-</h4>
     </div>
 </li>
