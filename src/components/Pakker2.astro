@@ -13,7 +13,7 @@ const {imgType,imgSrc,imgAlt, sectionVariant, sectionBackground,PakkeTitle,Pakke
 
         <div class="catering-package">
             <h2>{PakkeTitle}</h2>
-            <p class="presentation">{PakkeTekst}</p>
+            <h5 class="presentation">{PakkeTekst}</h5>
         
             <h6>Forret:</h6>
             <ul>
@@ -50,17 +50,26 @@ const {imgType,imgSrc,imgAlt, sectionVariant, sectionBackground,PakkeTitle,Pakke
     }
 
 .catering-package {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
         h2 {
             color: #556146;
+            font-size: clamp(2rem, 3vw, 2.875rem);
             
+        }
+        h5 {
+            margin-top: 5%;
+            color: #556146;
+            font-size: clamp(1.2rem, 2vw, 1.875rem);
+
         }
         h6 {
             margin-bottom: 10%;
             text-wrap: balance;
+            color: #556146;
+            
         }
 
         ul {
@@ -72,30 +81,62 @@ const {imgType,imgSrc,imgAlt, sectionVariant, sectionBackground,PakkeTitle,Pakke
         li {
             margin-bottom: 40px;
             line-height: 1;
-            font-size: clamp(0.5rem,2vw, 1.5rem);
+            font-size: clamp(1.2rem, 2vw, 1.875rem);
             color: #556146;
             font-weight: 400;
             text-wrap: balance;
         }
         p {
        margin-top: 10%;
-       font-size: clamp(0.5rem,2vw, 1.8rem);
-       text-wrap: balance;
-    
        font-weight: 500;
       
        color: #556146;
    }
    img {
+    width: auto;
+    height:100vh;
+   }
+  
+
+   .grid_2-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+        
+    justify-items: center;
+    margin-top: 5%;
+
+   }
+   @media(max-width:1100px){
+    .grid_2-2 {
+    display: grid;
+        grid-template-columns: 1fr;
+    justify-items: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 5%;
+    
+   }
+   }
+   
+
+   @media(max-width:768px){ 
+    .grid_2-2 {
+    display: grid;
+        grid-template-columns: 1fr;
+    justify-items: center;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 5%;
+    
+   }
+    img {
+        margin-top: 5%;
     width: 100%;
     height: auto;
    }
 
-   .grid_2-2 {
-    display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    justify-items: center;
-    margin-right: 10%;
-    margin-top: 5%;
    }
 </style>
