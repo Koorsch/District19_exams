@@ -20,10 +20,7 @@ import Button from "../components/Button.astro";
                             </div>
                         </div>
                         <div class="itemImg">
-                            <figure>
-                                <img src="../media/img/retter/spicycarrotpita.webp" alt="En ret">
-                                <figcaption></figcaption>
-                            </figure>
+                            <img src="../media/img/retter/spicycarrotpita.webp" alt="En ret">
                         </div>
                     </li>
                     <li class="menuItem">
@@ -37,10 +34,7 @@ import Button from "../components/Button.astro";
                             </div>
                         </div>
                         <div class="itemImg">
-                            <figure>
                                 <img src="../media/img/side/pomfritter.webp" alt="En ret">
-                                <figcaption></figcaption>
-                            </figure>
                         </div>
                     </li>
                 </ul>
@@ -96,9 +90,7 @@ import Button from "../components/Button.astro";
                         </label>
                     </div>
                     <div class="paymentMethods">
-                        <figure>
                             <img src="../media/img/betaling.webp" alt="Vælg mellem forskellige betalingsmåder som Visa, Mobilepay, MasterCard og Dankort">
-                        </figure>
                     </div>
                 </div>
                 <div>
@@ -113,16 +105,16 @@ import Button from "../components/Button.astro";
     .salesWindow {
         margin: auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+        grid-template-columns: 1fr;
         background-color: white;
         gap: 2rem;
     }
     .itemsCart {
         display: grid;
+        justify-content: center;
         gap: 1rem;
         width: 100%;
         height: fit-content;
-        padding-left: 2rem;
     }
     .itemsInCart {
         width: 100%;
@@ -132,21 +124,20 @@ import Button from "../components/Button.astro";
     .itemList {
         display: flex;
         flex-direction: column;
-        gap: 1rem;s
+        gap: 1rem;
     }
     .menuItem {
         display: grid;
         padding: 2rem 0;
         gap: 1rem;
         border-top: 2px solid var(--ff-green1);
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1fr;
     }
     .itemText .amount {
         padding-right: 1rem;
     }
     .itemText {
         padding-left: 1rem;
-        min-width: 200px;
         width: 100%;
 
     }
@@ -154,26 +145,23 @@ import Button from "../components/Button.astro";
         width: 100%;
         height: auto;
     }
-    figure {
-        height:auto;
-        width: 100%;
-    }
+
     .orderButtons input {
         width: 1.5rem;
         height: 1.5rem;
     }
-    .itemImg figure img {
+    .itemImg img {
         height: auto;
-        min-width: 150px;
-        max-width: 350px;
         width: 100%;
     }
     .shoppingCart {
         background-color: var(--ff-green1);
         place-content: center;
-        padding: 2rem;
-        min-width: 300px;
         display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+        justify-items: center;
+        padding-bottom: 1rem;
     }
     .shoppingCart h3 {
         color: var(--ff-white1);
@@ -207,7 +195,6 @@ import Button from "../components/Button.astro";
         display: grid;
         background-color: var(--ff-white2);
         border-radius: 3rem;
-        width: fit-content;
         gap: 1rem;
         padding-bottom: 1rem;
     }
@@ -244,26 +231,33 @@ import Button from "../components/Button.astro";
     }
     #discountButton {
         height: auto;
-        width: fit-content;
     }
     .paymentMethods {
-        display: flex;
-        
+        display: flex;   
     }
 
-    @media (max-width: 600px) {
+    @media (min-width: 600px) {
+        .menuItem {
+            grid-template-columns: 1fr 1fr;
+        }
         .itemsCart {
             justify-content: center;
+            padding-left: 2rem;
         }
-        .menuItem {
-            grid-template-columns: 1fr;
-            justify-content: center;
-        }
-        .itemImg figure img {
-            padding-left: 1rem;
-    }
         h2 {
             text-align: center;
+        }
+    }
+    @media (min-width: 1000px) {
+        .menuItem {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        .salesWindow {
+            grid-template-columns: 2fr 1fr;
+        }
+        .shoppingCart {
+            padding: 2rem;
         }
     }
 </style>
