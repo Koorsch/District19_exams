@@ -67,10 +67,14 @@ const sortedData = data.sort((a, b) => a.id - b.id);
 
 <style>
     .alignRight {
-        text-align: right;
-        align-items: center;
-        margin-bottom: 5%;
-        margin-right: 10%;
-        margin-top: 2%;
+        display: grid;
+        justify-content: space-around;
+        padding: 3rem 0;
+    }
+
+    @media (min-width: 600px) {
+        .alignRight {
+        justify-content: end;
+    }
     }
 </style>

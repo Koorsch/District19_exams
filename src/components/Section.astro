@@ -21,6 +21,7 @@ const {sectionImg,imgType,span,imgVariant,sectionAlt,sectionTitle,sectionText, s
 <style>
 
 .span1 {
+    display: grid;
     padding: 3rem 3rem;
     margin: 1rem 3rem;
     }
@@ -107,8 +108,9 @@ h2 {
     justify-items: left;
 }
 [data-variant="2col"] {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    justify-items: left;
+    justify-items: start;
     background-color: white;
 }
 [data-variant="2colRight"] {
@@ -139,7 +141,7 @@ h2 {
 	}
 .span1 {
     margin: 1rem 2rem;
-    padding: 0;
+    padding: 1rem;
     }
 
 .span2 {
