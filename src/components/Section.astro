@@ -5,8 +5,7 @@ const {sectionImg,imgType,span,imgVariant,sectionAlt,sectionTitle,sectionText, s
 ---
 
 <section data-variant={sectionBackground}>
-    <div data-variant={sectionVariant}
-    >
+    <div data-variant={sectionVariant}>
         <div data-variant={imgVariant} >
             <img loading="lazy" class={imgType} src={`/media/img/${sectionImg}`} alt={sectionAlt}>
         </div>
@@ -22,49 +21,34 @@ const {sectionImg,imgType,span,imgVariant,sectionAlt,sectionTitle,sectionText, s
 <style>
 
 .span1 {
-        margin-left: 25%;
-        margin-right: 25%;
-        margin-bottom: 5%;
-        margin-top: 20%;
+    padding: 3rem 3rem;
     }
-    .span2 {
-        grid-column: span 2;
-        margin-top: 15%;
-        margin-left: 10%;
-        margin-right: 20%;
-        margin-bottom: 5%;
-    }
-    .span3 {
-        margin-left: 10%;
-        margin-right: 20%;
-        margin-bottom: 5%;  
-    }
-    .span3 p {
-        font-size: clamp(0.5rem,2vw, 2rem);
-      
-    }
-    h2 {
-       
-        font-size: clamp(1rem,2vw, 2rem);
-        color: #556146;
-        margin-bottom: 4%;
-    }
-    p {
-        margin-top:0;
-        margin-bottom: 5%;
-        
-        line-height: 1.6;
-       
-        color: #556146;
-    }
+.span2 {
+    grid-column: span 2;
+    padding: 1rem 2rem;
+}
+.span3 {
+    padding: 0 1rem 4rem 2rem;
+}
+.span3 p {
+    font-size: clamp(0.5rem,2vw, 2rem); 
+}
+h2 {
+    font-size: clamp(1rem,2vw, 2rem);
+    color: #556146;
+    margin-bottom: 4%;
+}
+p {
+    margin-top:0;
+    margin-bottom: 5%;    
+    line-height: 1.6;
+    color: #556146;
+}
     .imgCenter {
         height: auto;
         width: 100%;
         align-self: center;
-        padding: 10%;
-        padding-right: 20%;
-
-       
+        padding: 0 1rem;     
     }
 
     [data-variant="imgLeft"] {
@@ -72,29 +56,22 @@ const {sectionImg,imgType,span,imgVariant,sectionAlt,sectionTitle,sectionText, s
         order: -1;
 	}
 	[data-variant="imgRight"] {
-        order: 1;
-       
-        
+        order: 1; 
 	}
 [data-variant="sectionGreen"] {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 80px auto;
-       
         margin: auto;
         justify-items: left;
         align-items: left;
-
 }
 [data-variant="sectionWhite"] {
         display: grid;
-        grid-template-columns: 1fr;
- 
-       
+        grid-template-columns: 1fr;       
         margin: auto;
         justify-items: left;
         align-items: left;
-
 }
 
 img {
@@ -102,10 +79,10 @@ img {
     height: auto;
 }
 
-    h2 {
-        text-transform: uppercase;
-      
-    }
+h2 {
+    text-transform: uppercase;
+    
+}
 [data-variant] {
     display: grid;
     width: 100%;
@@ -113,24 +90,22 @@ img {
    
 }
 [data-variant="1row1col"] {
-    grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: 1fr;
+    grid-template-rows: 1fr;
     justify-items: center;
     background-color: rgb(255, 255, 255);
 }
 [data-variant="3col"] {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     justify-items: left;
     background-color:white;
 }
 [data-variant="4col"] {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     justify-items: left;
-   
-    
-    
 }
 [data-variant="2col"] {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     justify-items: left;
     background-color: white;
 }
@@ -151,41 +126,29 @@ img {
 }
 
 [data-variant="3col"]img {
-    width: 80%;
+    display: grid;
     height: auto;
-    
-    
+    padding: 2rem;
 }
 
 .span1 {
-        margin-left: 10%;
-        margin-right: 10%;
-        margin-bottom: 5%;
-        margin-top: 20%;
+    margin: 1rem 2rem;
     }
 
 .span2 {
         grid-column: 1;
-        margin-top: 15%;
-        margin-left: 10%;
-        margin-right: 20%;
-        margin-bottom: 5%;
+        margin: 1rem 2rem;
     }
     .imgCenter {
         height: auto;
         width: 100%;
         align-self: center;
         padding: 10%;
-        padding-right: 10%;
-
-       
+        padding-right: 10%;       
     }
     [data-variant="4col"] {
     grid-template-columns: 1fr;
-    justify-items: center;
-   
-    
-    
+    justify-items: center; 
 }
 }
 </style>
