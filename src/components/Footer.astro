@@ -52,13 +52,18 @@ footer {
     display: flex;
     flex-direction: column;
 }
+.contactInfo h3 {
+    text-align: center;
+}
 #contact, #contact a {
     list-style: none;
     color: var(--ff-green2);
+    text-align: center;
 }
 #contact {
     display: grid;
     gap: 1rem;
+    text-align: center;
 }
 .iconTab {
     display: grid;
@@ -110,8 +115,8 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
 }
-.contactInfo {
-    text-align: center;
+.contactInfo, .contactInfo h3, #contact {
+    text-align: left;
 }
 }
 </style>
