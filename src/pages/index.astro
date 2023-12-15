@@ -25,7 +25,7 @@ const sortedData = data.sort((a, b) => a.id - b.id);
 
 <Layout imageVariant="stor" title="Falafel Factory" Image="../heroImg/Hero_Home.webp" showTitle={showTitle} ImageAlt="En stemningsfuld og mørkt belyst bred oversigtsbillede, der viser et udvalg af retter på et mørkt træbord. I forgrunden er der en blå keramiktallerken med en åben sandwich bestående af brunt brød og fyld af grøn salat og røde tomater. Ved siden af er der en klar skål med grønne bladgrøntsager i vand, muligvis til rensning eller som en del af en ret. I baggrunden er der en anden tallerken med en frodig salat, toppet med tomater, gule peberfrugter og en krydret dressing. Der er også falafelkugler, pænt anbragt ved siden af salaten. Billedet antyder en sund og smagfuld måltidstilberedning med fokus på friske ingredienser og visuel præsentation">
    
-    <ProductSection sectionText="Populære retter" sectionVariant="3col">
+    <ProductSection sectionText="POPULÆRE RETTER" sectionVariant="3col">
             {
                 sortedData.slice(0,3).map ((menuItem) => {
                     return <Product ret_billede={menuItem.ret_billede} ret_desc={menuItem.ret_desc} ret_navn={menuItem.ret_navn} ret_pris={menuItem.ret_pris} buttonText="Tilføj Ordre" buttonVariant="primary" buttonLink="/dinOrdre/" ImageAlt="En stemningsfuld og mørkt belyst bred oversigtsbillede, der viser et udvalg af retter på et mørkt træbord. I forgrunden er der en blå keramiktallerken med en åben sandwich bestående af brunt brød og fyld af grøn salat og røde tomater. Ved siden af er der en klar skål med grønne bladgrøntsager i vand, muligvis til rensning eller som en del af en ret. I baggrunden er der en anden tallerken med en frodig salat, toppet med tomater, gule peberfrugter og en krydret dressing. Der er også falafelkugler, pænt anbragt ved siden af salaten. Billedet antyder en sund og smagfuld måltidstilberedning med fokus på friske ingredienser og visuel præsentation."/>
@@ -54,7 +54,7 @@ const sortedData = data.sort((a, b) => a.id - b.id);
         imgVariant="imgRight"
         imgType="imgCenter"
         span="span1"
-        sectionBackground="sectionWhite"
+        sectionBackground="sectionGreen"
         sectionTitle="Om Os"
         sectionText="Vi omfavner udvalgte opskrifter fra Mellemøsten, især den velkendte falafel der med en blid brise har fundet vej til vores butik i København. Vi tilfører vores eget personlige præg til traditionelle opskrifter, da vores passion er at udforske forskellige smagsoplevelser. Det kommer til udtryk i vores måde at kombinere forskellige køkkener på."
         sectionImg="/Om_os.webp"
