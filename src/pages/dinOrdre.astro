@@ -14,9 +14,9 @@ import Button from "../components/Button.astro";
                             <h3><span class="amount">1x</span>Spicy Carrot Pita</h3>
                             <h4><span class="price">80</span>kr</h4>
                             <div class="orderButtons">
-                                <input type="button" value="-">
+                                <Button buttonVariant="primary" buttonText="-"/>
                                 <span>2</span>
-                                <input type="button" value="+">
+                                <Button buttonVariant="primary" buttonText="+"/>
                             </div>
                         </div>
                         <div class="itemImg">
@@ -28,9 +28,9 @@ import Button from "../components/Button.astro";
                             <h3><span class="amount">1x</span>Lille Pomfritter</h3>
                             <h4><span class="price">80</span>kr</h4>
                             <div class="orderButtons">
-                                <input type="button" value="-">
+                                <Button buttonVariant="primary" buttonText="-"/>
                                 <span>2</span>
-                                <input type="button" value="+">
+                                <Button buttonVariant="primary" buttonText="+"/>
                             </div>
                         </div>
                         <div class="itemImg">
@@ -147,9 +147,18 @@ import Button from "../components/Button.astro";
         height: auto;
     }
 
-    .orderButtons input {
-        width: 1.5rem;
-        height: 1.5rem;
+    .orderButtons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        width: fit-content;
+        border: 2px solid var(--ff-green2);
+        border-radius: 3rem;
+        align-items: center;
+        text-align: center;
+    }
+    .orderButtons span {
+        font-size: larger;
+        color: var(--ff-green1);
     }
     .itemImg img, .paymentMethods img {
         height: auto;
@@ -175,8 +184,9 @@ import Button from "../components/Button.astro";
     }
     .deliveryButton {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: 1rem;
+        text-indent: 0.25rem;
         justify-content: center;
         align-items: center;
         padding:0.75rem;
@@ -211,6 +221,7 @@ import Button from "../components/Button.astro";
         display: flex;
         padding: 0.25rem 0;
         justify-content: space-between;
+        gap: 2rem;
     }
     .itemPrice.totalPrice {
         height: fit-content;
@@ -218,7 +229,11 @@ import Button from "../components/Button.astro";
         border-top: 2px solid var(--ff-green1);
     }
     .discount {
-        padding: 1rem 2rem 2rem 2rem;
+        display: grid;
+        grid-auto-flow: row;
+        width: 100%;
+        padding: 0.5rem;
+        justify-items: center;
     }
     .discountBox {
         display: flex;
