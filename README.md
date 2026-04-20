@@ -1,4 +1,4 @@
-# District 19 :joy:
+# District 19
 
 ## Examwork
 
@@ -6,4 +6,4 @@
 npm install
 ```
 
-[![The site online @Netlify]()](https://)
+[The site online @Netlify](https://district19-exam.netlify.app)
